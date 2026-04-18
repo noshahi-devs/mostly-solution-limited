@@ -1,0 +1,7 @@
+/* Component-specific overrides for App Component */
+:host {
+  display: block;
+}
+
+/* Local styles can be empty if global styles.css handles everything, 
+   but we can put specific layout tweaks here if needed. */

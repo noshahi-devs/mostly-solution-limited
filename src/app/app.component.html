@@ -1,0 +1,397 @@
+<!-- Navigation -->
+<header class="sticky top-0 z-50 bg-white shadow-sm h-20 flex items-center">
+    <div class="max-w-6xl w-full mx-auto px-5 flex justify-between items-center">
+        <a href="#home" class="flex items-center gap-3">
+            <img src="img/NTB logo.jpeg" alt="Mostly Solutions" class="h-12">
+            <span class="font-extrabold text-2xl tracking-tighter text-[#111111] hidden sm:block uppercase italic">Mostly Solution Limited</span>
+        </a>
+        
+        <nav class="hidden lg:flex items-center gap-8 font-bold uppercase text-xs tracking-wider text-gray-600">
+            <a href="#home" class="hover:text-primary transition-colors">Home</a>
+            <a href="#services" class="hover:text-primary transition-colors">Services</a>
+            <a href="#locations" class="hover:text-primary transition-colors">Locations</a>
+            <a href="#value-added" class="hover:text-primary transition-colors">Specialties</a>
+            <a href="#appointment" class="bg-primary text-white px-6 py-2.5 rounded hover:bg-black transition-all shadow-lg shadow-primary/20">Book Now</a>
+        </nav>
+
+        <button class="lg:hidden text-[#111111]" (click)="toggleMenu()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><line x1="3" x2="21" y1="6" y2="6"></line><line x1="3" x2="21" y1="12" y2="12"></line><line x1="3" x2="21" y1="18" y2="18"></line></svg>
+        </button>
+    </div>
+    
+    <!-- Mobile Menu Overlay -->
+    <div *ngIf="menuOpen" class="fixed inset-0 z-[60] bg-white flex flex-col p-8 gap-8 uppercase font-bold text-xl">
+        <div class="flex justify-between items-center">
+            <img src="img/NTB logo.jpeg" alt="Logo" class="h-10">
+            <button (click)="toggleMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg>
+            </button>
+        </div>
+        <a href="#home" (click)="toggleMenu()">Home</a>
+        <a href="#services" (click)="toggleMenu()">Services</a>
+        <a href="#locations" (click)="toggleMenu()">Locations</a>
+        <a href="#value-added" (click)="toggleMenu()">Specialties</a>
+        <a href="#appointment" class="text-primary" (click)="toggleMenu()">Book Now</a>
+    </div>
+</header>
+
+<main class="w-full">
+    <!-- Hero Section -->
+    <section id="home" class="relative flex items-center bg-[#111111] overflow-hidden min-h-[85vh]">
+        <div class="absolute inset-0 opacity-20">
+            <img src="src/assets/mechanic_hero_bg_1776492390130.png" alt="Mechanic bg" class="w-full h-full object-cover">
+        </div>
+        <div class="w-full max-w-6xl mx-auto relative z-10 p-5 pt-24 lg:pt-36 pb-12 lg:pb-20">
+            <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                <div class="space-y-6 lg:space-y-8">
+                    <div class="inline-flex items-center bg-primary/10 border border-primary/20 rounded-full px-4 py-2">
+                        <span class="text-primary text-sm font-medium uppercase tracking-widest">🇳🇬 Nigeria • 🇬🇧 United Kingdom</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl xl:text-6xl font-black text-white leading-tight uppercase italic">
+                        <span class="text-primary">MOBILE MECHANIC</span><br>IN YOUR LOCATION
+                    </h1>
+                    <p class="text-xl text-gray-300 max-w-lg font-medium">Professional Mobile Mechanic delivering exceptional results across Nigeria and the UK.</p>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3 bg-white/5 rounded-lg px-4 py-3 border border-white/10">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary w-6 h-6"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            <div>
+                                <div class="text-2xl font-black text-white italic">5000+</div>
+                                <div class="text-[10px] text-gray-400 uppercase tracking-widest font-black">Happy Customers</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 bg-white/5 rounded-lg px-4 py-3 border border-white/10">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary w-6 h-6"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <div>
+                                <div class="text-2xl font-black text-white italic">4.9/5</div>
+                                <div class="text-[10px] text-gray-400 uppercase tracking-widest font-black">Rating</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="/bus-initiative" class="flex-1">
+                            <button class="w-full h-12 rounded bg-white/10 border border-primary text-primary font-black uppercase tracking-widest hover:bg-primary hover:text-white transition-all">
+                                Our Bus Initiative
+                            </button>
+                        </a>
+                        <a href="#appointment" class="flex-1">
+                            <button class="w-full h-12 rounded bg-primary text-white font-black uppercase tracking-widest text-lg hover:bg-black transition-all shadow-xl shadow-primary/20 italic">
+                                Book Now / Buy Cover
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="relative h-[350px] lg:h-[500px] rounded-2xl overflow-hidden border-2 border-primary/20 shadow-2xl">
+                        <img src="src/assets/service_engine_diagnostic_1776492556369.png" alt="Mechanic Service" class="w-full h-full object-cover">
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <div class="bg-[#111111]/90 backdrop-blur rounded-lg p-5 border border-white/10 shadow-xl">
+                                <div class="text-primary font-black uppercase italic tracking-wider">24/7 Mobile Support</div>
+                                <div class="text-white/80 text-xs font-bold uppercase tracking-widest">Trusted by Industry Leaders</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-muted py-12 lg:py-20">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="flex flex-col items-center text-center space-y-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary w-10 h-10"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path><circle cx="7" cy="17" r="2"></circle><path d="M9 17h6"></path><circle cx="17" cy="17" r="2"></circle></svg>
+                    <div class="text-4xl font-black text-gray-900 italic">480</div>
+                    <div class="text-gray-500 font-black uppercase text-[10px] tracking-[0.2em]">Crash Recover Car</div>
+                </div>
+                <div class="flex flex-col items-center text-center space-y-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary w-10 h-10"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                    <div class="text-4xl font-black text-gray-900 italic">1000</div>
+                    <div class="text-gray-500 font-black uppercase text-[10px] tracking-[0.2em]">Vehicles Serviced</div>
+                </div>
+                <div class="flex flex-col items-center text-center space-y-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary w-10 h-10"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>
+                    <div class="text-4xl font-black text-gray-900 italic">952</div>
+                    <div class="text-gray-500 font-black uppercase text-[10px] tracking-[0.2em]">Satisfaction Rate</div>
+                </div>
+                <div class="flex flex-col items-center text-center space-y-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary w-10 h-10"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path><path d="M10 6h4"></path><path d="M10 10h4"></path><path d="M10 14h4"></path><path d="M10 18h4"></path></svg>
+                    <div class="text-4xl font-black text-gray-900 italic">50</div>
+                    <div class="text-gray-500 font-black uppercase text-[10px] tracking-[0.2em]">Partner Workshops</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Locations -->
+    <section id="locations" class="py-20 lg:py-32 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl lg:text-5xl font-black mb-4 uppercase italic">
+                    <span class="text-primary italic">GLOBAL</span> LOCATIONS
+                </h2>
+                <p class="max-w-2xl mx-auto text-lg text-gray-600 font-bold uppercase tracking-tight">Professional Mobile Mechanic services available across two countries.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Location: Nigeria -->
+                <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl transition-all duration-500">
+                    <div class="relative h-72">
+                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=1000" alt="Lagos" class="w-full h-full object-cover">
+                        <div class="absolute top-6 left-6">
+                            <div class="bg-primary text-white px-5 py-2 rounded-full font-black text-xs uppercase tracking-widest shadow-xl">🇳🇬 Nigeria</div>
+                        </div>
+                    </div>
+                    <div class="p-10">
+                        <h3 class="text-3xl font-black uppercase italic mb-8">Lagos HQ</h3>
+                        <div class="space-y-5 mb-10">
+                            <div class="flex items-center text-gray-700 font-bold uppercase text-xs tracking-widest">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary w-5 h-5 mr-3"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                8 Ramat Crescent, Ogudu G.R.A.
+                            </div>
+                            <div class="flex items-center text-gray-700 font-bold uppercase text-xs tracking-widest">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary w-5 h-5 mr-3"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                0913 764 5289
+                            </div>
+                            <div class="flex items-center text-gray-700 font-bold uppercase text-xs tracking-widest">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary w-5 h-5 mr-3"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                24/7 Priority Support
+                            </div>
+                        </div>
+                        <a href="#appointment" (click)="scrollToAppointment('Lagos')" class="block w-full text-center bg-primary text-white py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-black transition-colors italic">Book in Lagos</a>
+                    </div>
+                </div>
+
+                <!-- Location: UK -->
+                <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl transition-all duration-500">
+                    <div class="relative h-72">
+                        <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&q=80&w=1000" alt="Luton" class="w-full h-full object-cover">
+                        <div class="absolute top-6 left-6">
+                            <div class="bg-primary text-white px-5 py-2 rounded-full font-black text-xs uppercase tracking-widest shadow-xl">🇬🇧 UK</div>
+                        </div>
+                    </div>
+                    <div class="p-10">
+                        <h3 class="text-3xl font-black uppercase italic mb-8">Luton Office</h3>
+                        <div class="space-y-5 mb-10">
+                            <div class="flex items-center text-gray-700 font-bold uppercase text-xs tracking-widest">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary w-5 h-5 mr-3"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                145 Ashburnham road
+                            </div>
+                            <div class="flex items-center text-gray-700 font-bold uppercase text-xs tracking-widest">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary w-5 h-5 mr-3"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                +44 7760 749992
+                            </div>
+                            <div class="flex items-center text-gray-700 font-bold uppercase text-xs tracking-widest">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary w-5 h-5 mr-3"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                Mon-Sat 8AM-8PM
+                            </div>
+                        </div>
+                        <a href="#appointment" (click)="scrollToAppointment('Luton')" class="block w-full text-center bg-primary text-white py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-black transition-colors italic">Book in UK</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Added -->
+    <section id="value-added" class="py-20 lg:py-32 bg-white">
+        <div class="max-w-6xl mx-auto px-5">
+            <h2 class="text-4xl lg:text-5xl font-black mb-16 uppercase italic">
+                <span class="text-primary italic">VALUE ADDED</span> SERVICES
+            </h2>
+            
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div class="relative">
+                    <div class="relative h-[450px] transform -rotate-2 hover:rotate-0 transition-transform duration-500 rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
+                        <img src="src/assets/service_brake_repair_1776492609413.png" alt="Specialties" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <div class="grid gap-10">
+                    <div class="flex gap-6 group">
+                        <div class="flex-shrink-0 bg-primary/10 p-4 rounded-xl h-14 w-14 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-black uppercase italic mb-2 tracking-tight">Car Tracking & Recovery</h3>
+                            <p class="text-gray-500 font-bold uppercase text-[10px] tracking-widest leading-relaxed">Advanced security & speed limiters.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 group">
+                        <div class="flex-shrink-0 bg-primary/10 p-4 rounded-xl h-14 w-14 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-black uppercase italic mb-2 tracking-tight">Driver Training</h3>
+                            <p class="text-gray-500 font-bold uppercase text-[10px] tracking-widest leading-relaxed">Safety consciousness & skill development.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 group">
+                        <div class="flex-shrink-0 bg-primary/10 p-4 rounded-xl h-14 w-14 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-black uppercase italic mb-2 tracking-tight">Digital Service History</h3>
+                            <p class="text-gray-500 font-bold uppercase text-[10px] tracking-widest leading-relaxed">Accessible transparent logs for all vehicles.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 group">
+                        <div class="flex-shrink-0 bg-primary/10 p-4 rounded-xl h-14 w-14 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><rect width="20" height="14" x="2" y="5" rx="2"></rect><line x1="2" x2="22" y1="10" y2="10"></line></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-black uppercase italic mb-2 tracking-tight">Repair Financing</h3>
+                            <p class="text-gray-500 font-bold uppercase text-[10px] tracking-widest leading-relaxed">Partnering for fix-now-pay-later options.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-5">
+            <h2 class="text-4xl font-black text-center mb-16 uppercase italic">Why <span class="text-primary italic">Choose Us</span>?</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 text-center">
+                <div class="space-y-4">
+                    <span class="text-5xl">🏆</span>
+                    <p class="text-[10px] font-black uppercase tracking-widest leading-tight">Experienced Professionals</p>
+                </div>
+                <div class="space-y-4">
+                    <span class="text-5xl">🚗</span>
+                    <p class="text-[10px] font-black uppercase tracking-widest leading-tight">Mobile At Your Door</p>
+                </div>
+                <div class="space-y-4">
+                    <span class="text-5xl">⚙️</span>
+                    <p class="text-[10px] font-black uppercase tracking-widest leading-tight">Skilled Technicians</p>
+                </div>
+                <div class="space-y-4">
+                    <span class="text-5xl">⏰</span>
+                    <p class="text-[10px] font-black uppercase tracking-widest leading-tight">24/7 Rapid Response</p>
+                </div>
+                <div class="space-y-4">
+                    <span class="text-5xl">⚒️</span>
+                    <p class="text-[10px] font-black uppercase tracking-widest leading-tight">Specialized Equipment</p>
+                </div>
+                <div class="space-y-4">
+                    <span class="text-5xl">💰</span>
+                    <p class="text-[10px] font-black uppercase tracking-widest leading-tight">Cost Effective Pricing</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="appointment" class="py-20 bg-primary">
+        <div class="max-w-6xl mx-auto px-5 text-center">
+            <div class="bg-white rounded-3xl p-10 lg:p-20 shadow-2xl">
+                <h2 class="text-4xl lg:text-5xl font-black mb-6 uppercase italic">Schedule An Appointment</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto mb-12 font-bold uppercase tracking-tight">Book your session with Mostly Solution Limited today. Our mobile team is standing by.</p>
+                <form class="grid sm:grid-cols-2 gap-10" (submit)="onSubmit($event)">
+                    <input type="text" placeholder="Full Name" class="border-b-2 border-gray-100 py-4 font-black uppercase text-xs tracking-widest focus:border-primary outline-none transition-all" required>
+                    <input type="tel" placeholder="Phone Number" class="border-b-2 border-gray-100 py-4 font-black uppercase text-xs tracking-widest focus:border-primary outline-none transition-all" required>
+                    <div class="sm:col-span-2">
+                        <button type="submit" class="w-full bg-primary text-white py-6 rounded-2xl font-black uppercase tracking-[0.2em] text-lg hover:bg-black transition-all shadow-xl italic">Confirm Booking</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Excellence Grid -->
+    <section class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div>
+                    <p class="text-primary font-black uppercase tracking-widest text-[10px] mb-3 italic">Our Philosophy</p>
+                    <h2 class="text-4xl lg:text-5xl font-black italic uppercase"><span class="text-primary italic">Excellence In</span> auto care.</h2>
+                </div>
+                <a href="#services" class="bg-black text-white px-10 py-4 rounded-md font-black uppercase tracking-[0.1em] text-xs hover:bg-primary transition-all shadow-lg italic">View All Services</a>
+            </div>
+            
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="relative group h-[400px] rounded-3xl overflow-hidden cursor-pointer shadow-xl transition-all">
+                    <img src="https://images.unsplash.com/photo-1486006396193-47101993e3d4?auto=format&fit=crop&q=80&w=1000" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent flex flex-col justify-end p-8">
+                        <h4 class="text-primary text-xl font-black mb-2 italic uppercase">Mobile Mechanic</h4>
+                        <p class="text-white/70 text-[10px] font-black uppercase tracking-widest">24/7 Rapid support everywhere.</p>
+                    </div>
+                </div>
+                <div class="relative group h-[400px] rounded-3xl overflow-hidden cursor-pointer shadow-xl transition-all">
+                    <img src="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&q=80&w=1000" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent flex flex-col justify-end p-8">
+                        <h4 class="text-primary text-xl font-black mb-2 italic uppercase">Inspections</h4>
+                        <p class="text-white/70 text-[10px] font-black uppercase tracking-widest">Pre-purchase & diagnostic audits.</p>
+                    </div>
+                </div>
+                <div class="relative group h-[400px] rounded-3xl overflow-hidden cursor-pointer shadow-xl transition-all">
+                    <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&q=80&w=1000" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent flex flex-col justify-end p-8">
+                        <h4 class="text-primary text-xl font-black mb-2 italic uppercase">Repairs</h4>
+                        <p class="text-white/70 text-[10px] font-black uppercase tracking-widest">Expert major & minor fixes.</p>
+                    </div>
+                </div>
+                <div class="relative group h-[400px] rounded-3xl overflow-hidden cursor-pointer shadow-xl transition-all">
+                    <img src="https://images.unsplash.com/photo-1552933529-e359b24772fe?auto=format&fit=crop&q=80&w=1000" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent flex flex-col justify-end p-8">
+                        <h4 class="text-primary text-xl font-black mb-2 italic uppercase">Maintenance</h4>
+                        <p class="text-white/70 text-[10px] font-black uppercase tracking-widest">Long-term care & durability.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Scrolling Marquee -->
+    <div class="py-12 bg-white border-t border-gray-100 overflow-hidden relative">
+        <div class="flex whitespace-nowrap animate-scroll font-black text-3xl text-gray-200 gap-20 uppercase tracking-tighter italic grayscale opacity-50">
+            <span>NATA</span><span>SWIPHA</span><span>BILLBOX</span><span>GBOVO</span><span>ARTEE</span><span>FACCO</span><span>AUTOCHEK</span><span>LAMATA</span><span>SHUTTERS</span><span>TRANEX</span>
+            <span>NATA</span><span>SWIPHA</span><span>BILLBOX</span><span>GBOVO</span><span>ARTEE</span><span>FACCO</span><span>AUTOCHEK</span><span>LAMATA</span><span>SHUTTERS</span><span>TRANEX</span>
+        </div>
+    </div>
+</main>
+
+<footer class="bg-[#111111] text-white py-24">
+    <div class="max-w-6xl mx-auto px-5">
+        <div class="grid lg:grid-cols-4 gap-16">
+            <div>
+                <div class="flex items-center gap-4 mb-10">
+                    <img src="img/NTB logo.jpeg" alt="Logo" class="h-10 brightness-0 invert">
+                    <span class="text-2xl font-black italic tracking-tighter uppercase">Mostly Solution Limited</span>
+                </div>
+                <p class="text-gray-500 font-bold uppercase text-[10px] tracking-widest leading-relaxed">Mostly Solutions Limited. Premium automotive mobile engineering across Nigeria and the UK.</p>
+            </div>
+            <div>
+                <h4 class="text-lg font-black uppercase italic mb-10 border-l-4 border-primary pl-4 tracking-[3px]">Menu</h4>
+                <div class="flex flex-col gap-5 text-gray-500 font-black uppercase text-[10px] tracking-widest">
+                    <a href="#home" class="hover:text-primary transition-colors">Home</a>
+                    <a href="#services" class="hover:text-primary transition-colors">Services</a>
+                    <a href="#locations" class="hover:text-primary transition-colors">Locations</a>
+                    <a href="#appointment" class="hover:text-primary transition-colors">Booking</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-lg font-black uppercase italic mb-10 border-l-4 border-primary pl-4 tracking-[3px]">Lagos</h4>
+                <p class="text-gray-500 font-black uppercase text-[10px] tracking-widest leading-loose mb-4">8 Ramat Crescent, Ogudu G.R.A.</p>
+                <a href="tel:09137645289" class="text-white font-black uppercase text-xs tracking-widest">📞 0913 764 5289</a>
+            </div>
+            <div>
+                <h4 class="text-lg font-black uppercase italic mb-10 border-l-4 border-primary pl-4 tracking-[3px]">Luton</h4>
+                <p class="text-gray-500 font-black uppercase text-[10px] tracking-widest leading-loose mb-4">145 Ashburnham Road, Luton</p>
+                <a href="tel:+447760749992" class="text-white font-black uppercase text-xs tracking-widest">📞 +44 7760 749992</a>
+            </div>
+        </div>
+        <div class="mt-20 pt-10 border-t border-white/5 text-center text-gray-700 font-black uppercase text-[9px] tracking-[5px]">
+            &copy; 2026 Mostly Solution Limited
+        </div>
+    </div>
+</footer>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/2349137645289" class="fixed bottom-10 right-10 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform z-50">
+    <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
