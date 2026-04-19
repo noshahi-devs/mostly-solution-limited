@@ -20,4 +20,11 @@ export class AppComponent {
     event.preventDefault();
     alert('Thank you for choosing Mostly Solution Limited! Your booking request has been sent. We will contact you shortly.');
   }
+
+  scrollToAppointment(location: string) {
+    const element = document.getElementById('appointment');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }

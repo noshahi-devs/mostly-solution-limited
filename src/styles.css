@@ -53,7 +53,7 @@ h1, h2, h3, h4 { color: var(--secondary); font-weight: 700; line-height: 1.2; te
 /* Hero */
 .hero { 
   height: 100vh;
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('src/assets/mechanic_hero_bg_1776492390130.png');
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/mechanic_hero_bg_1776492390130.png');
   background-size: cover;
   background-position: center;
   display: flex;
