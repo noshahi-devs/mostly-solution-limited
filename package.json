@@ -2,10 +2,10 @@
   "name": "mostly-solution-website",
   "version": "1.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development"
+    "ng": "npx ng",
+    "start": "npx ng serve",
+    "build": "npx ng build",
+    "watch": "npx ng build --watch --configuration development"
   },
   "private": true,
   "engines": {
