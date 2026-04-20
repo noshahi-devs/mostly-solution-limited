@@ -40,6 +40,8 @@ export class AboutPageComponent implements AfterViewInit, OnDestroy {
 
   autoPlayingVideoIndexes = new Set<number>();
   autoPlayingProcessIndexes = new Set<number>();
+  autoPlayingMissionIndexes = new Set<number>();
+  autoPlayingWhyIndexes = new Set<number>();
   lightboxOpen = false;
   lightboxImage = '';
   lightboxTitle = '';
@@ -50,6 +52,10 @@ export class AboutPageComponent implements AfterViewInit, OnDestroy {
   private videoAutoPlayTimers = new Map<number, ReturnType<typeof setTimeout>>();
   private processViewportObserver: IntersectionObserver | null = null;
   private processAutoPlayTimers = new Map<number, ReturnType<typeof setTimeout>>();
+  private missionViewportObserver: IntersectionObserver | null = null;
+  private missionAutoPlayTimers = new Map<number, ReturnType<typeof setTimeout>>();
+  private whyViewportObserver: IntersectionObserver | null = null;
+  private whyAutoPlayTimers = new Map<number, ReturnType<typeof setTimeout>>();
   private countersStarted = false;
 
   readonly missionCards: AboutCard[] = [
@@ -180,6 +186,8 @@ export class AboutPageComponent implements AfterViewInit, OnDestroy {
     this.setupStatsObserver();
     this.setupVideoViewportAutoPlay();
     this.setupProcessViewportAutoPlay();
+    this.setupMissionViewportAutoPlay();
+    this.setupWhyViewportAutoPlay();
   }
 
   ngOnDestroy(): void {
@@ -191,6 +199,12 @@ export class AboutPageComponent implements AfterViewInit, OnDestroy {
     this.processViewportObserver?.disconnect();
     this.processAutoPlayTimers.forEach((timer) => clearTimeout(timer));
     this.processAutoPlayTimers.clear();
+    this.missionViewportObserver?.disconnect();
+    this.missionAutoPlayTimers.forEach((timer) => clearTimeout(timer));
+    this.missionAutoPlayTimers.clear();
+    this.whyViewportObserver?.disconnect();
+    this.whyAutoPlayTimers.forEach((timer) => clearTimeout(timer));
+    this.whyAutoPlayTimers.clear();
   }
 
   @HostListener('document:keydown.escape')
@@ -415,6 +429,88 @@ export class AboutPageComponent implements AfterViewInit, OnDestroy {
     );
 
     document.querySelectorAll('.process-step').forEach((el) => this.processViewportObserver?.observe(el));
+  }
+
+  private setupMissionViewportAutoPlay(): void {
+    if (typeof IntersectionObserver === 'undefined') {
+      return;
+    }
+
+    this.missionViewportObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const indexText = (entry.target as HTMLElement).dataset['missionIndex'];
+          const index = Number(indexText);
+          if (Number.isNaN(index) || !this.isMobileViewport()) {
+            return;
+          }
+
+          if (entry.isIntersecting) {
+            if (this.missionAutoPlayTimers.has(index) || this.autoPlayingMissionIndexes.has(index)) {
+              return;
+            }
+
+            const timer = setTimeout(() => {
+              this.missionAutoPlayTimers.delete(index);
+              this.autoPlayingMissionIndexes.add(index);
+            }, 3000);
+            this.missionAutoPlayTimers.set(index, timer);
+            return;
+          }
+
+          const timer = this.missionAutoPlayTimers.get(index);
+          if (timer) {
+            clearTimeout(timer);
+            this.missionAutoPlayTimers.delete(index);
+          }
+          this.autoPlayingMissionIndexes.delete(index);
+        });
+      },
+      { threshold: 0.55 }
+    );
+
+    document.querySelectorAll('.mission-card').forEach((el) => this.missionViewportObserver?.observe(el));
+  }
+
+  private setupWhyViewportAutoPlay(): void {
+    if (typeof IntersectionObserver === 'undefined') {
+      return;
+    }
+
+    this.whyViewportObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const indexText = (entry.target as HTMLElement).dataset['whyIndex'];
+          const index = Number(indexText);
+          if (Number.isNaN(index) || !this.isMobileViewport()) {
+            return;
+          }
+
+          if (entry.isIntersecting) {
+            if (this.whyAutoPlayTimers.has(index) || this.autoPlayingWhyIndexes.has(index)) {
+              return;
+            }
+
+            const timer = setTimeout(() => {
+              this.whyAutoPlayTimers.delete(index);
+              this.autoPlayingWhyIndexes.add(index);
+            }, 3000);
+            this.whyAutoPlayTimers.set(index, timer);
+            return;
+          }
+
+          const timer = this.whyAutoPlayTimers.get(index);
+          if (timer) {
+            clearTimeout(timer);
+            this.whyAutoPlayTimers.delete(index);
+          }
+          this.autoPlayingWhyIndexes.delete(index);
+        });
+      },
+      { threshold: 0.55 }
+    );
+
+    document.querySelectorAll('.why-choose-card').forEach((el) => this.whyViewportObserver?.observe(el));
   }
 }
 

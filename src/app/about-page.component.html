@@ -68,7 +68,9 @@
       </div>
 
       <div class="mt-10 grid md:grid-cols-2 xl:grid-cols-3 gap-6">
-        <article *ngFor="let item of missionCards" class="reveal mission-card">
+        <article *ngFor="let item of missionCards; let i = index" class="reveal mission-card"
+          [attr.data-mission-index]="i"
+          [class.mission-in-view-play]="autoPlayingMissionIndexes.has(i)">
           <div class="flex items-center gap-3">
             <span class="mission-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path [attr.d]="item.icon"></path></svg>
@@ -90,7 +92,9 @@
       </div>
 
       <div class="mt-10 grid sm:grid-cols-2 xl:grid-cols-3 gap-5">
-        <article *ngFor="let item of whyChooseUs" class="reveal why-choose-card">
+        <article *ngFor="let item of whyChooseUs; let i = index" class="reveal why-choose-card"
+          [attr.data-why-index]="i"
+          [class.why-in-view-play]="autoPlayingWhyIndexes.has(i)">
           <div class="flex items-center gap-3">
             <span class="why-choose-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path [attr.d]="item.icon"></path></svg>
