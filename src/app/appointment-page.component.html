@@ -1,0 +1,129 @@
+<main class="w-full pt-20">
+  <section class="py-16 lg:py-20 bg-white border-y border-[#dbe9f6]">
+    <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <p class="text-primary font-black uppercase text-[10px] tracking-[0.24em]">Booking</p>
+        <h1 class="mt-2 text-4xl lg:text-5xl font-black uppercase tracking-tight text-primary-dark">Book Appointment</h1>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-10 items-start">
+        <div class="space-y-6">
+          <div #bookingCard class="group h-fit relative overflow-hidden rounded-3xl border border-[#cfe3f6] bg-gradient-to-br from-[#eef6ff] via-white to-[#f4fbec] p-7 lg:p-10 shadow-[0_18px_36px_rgba(30,120,191,0.12)]"
+            (mouseenter)="playBookingVideo(bookingVideo)" (mouseleave)="resetBookingVideo(bookingVideo)">
+            <video #bookingVideo muted loop playsinline preload="metadata"
+              [style.opacity]="showBookingVideo ? '1' : null"
+              class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+              <source src="assets/hero-bg.mp4" type="video/mp4">
+            </video>
+            <div class="pointer-events-none absolute inset-0 bg-[#0f172a]/0 transition-colors duration-500 group-hover:bg-[#0f172a]/55"
+              [style.backgroundColor]="showBookingVideo ? 'rgba(15, 23, 42, 0.55)' : null"></div>
+
+            <div class="relative z-10">
+              <p class="text-primary font-black uppercase text-[10px] tracking-[0.24em] transition-colors duration-300 group-hover:text-white/90">Quick Booking</p>
+              <h3 class="mt-3 text-3xl lg:text-4xl font-black uppercase tracking-tight text-primary-dark transition-colors duration-300 group-hover:text-white">Book Appointment</h3>
+              <p class="mt-4 text-gray-600 font-medium leading-relaxed transition-colors duration-300 group-hover:text-white/95">
+                Share your vehicle issue and preferred time. Our team will confirm your booking quickly.
+              </p>
+              <div class="mt-8 space-y-4">
+                <div class="flex items-center gap-3 text-primary-dark font-bold text-sm transition-colors duration-300 group-hover:text-white">
+                  <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-accent group-hover:text-primary-dark">1</span>
+                  <span>Submit your details in under 1 minute</span>
+                </div>
+                <div class="flex items-center gap-3 text-primary-dark font-bold text-sm transition-colors duration-300 group-hover:text-white">
+                  <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-accent group-hover:text-primary-dark">2</span>
+                  <span>Get confirmation and technician assignment</span>
+                </div>
+                <div class="flex items-center gap-3 text-primary-dark font-bold text-sm transition-colors duration-300 group-hover:text-white">
+                  <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-accent group-hover:text-primary-dark">3</span>
+                  <span>Service delivered at your location</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="group relative overflow-hidden rounded-3xl border border-[#cfe3f6] bg-gradient-to-br from-white via-[#f3f9ff] to-[#eaf7d8] p-6 lg:p-8 shadow-[0_16px_32px_rgba(30,120,191,0.11)]">
+            <div class="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_right,rgba(141,198,63,0.22),transparent_45%),radial-gradient(circle_at_bottom_left,rgba(30,120,191,0.16),transparent_40%)]"></div>
+            <div class="relative z-10">
+              <p class="text-primary font-black uppercase text-[10px] tracking-[0.24em]">Appointment Tips</p>
+              <h3 class="mt-2 text-2xl lg:text-3xl font-black uppercase tracking-tight text-primary-dark">Before Technician Arrives</h3>
+              <p class="mt-3 text-primary-dark/75 font-medium leading-relaxed">
+                Keep your booking smooth by sharing accurate vehicle details and keeping your phone available for confirmation updates.
+              </p>
+              <ul class="mt-5 space-y-2 text-sm font-bold text-primary-dark">
+                <li class="flex items-start gap-2">
+                  <span class="mt-1 inline-flex h-2 w-2 rounded-full bg-accent"></span>
+                  <span>Park car in a safe, accessible spot.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-1 inline-flex h-2 w-2 rounded-full bg-accent"></span>
+                  <span>Upload clear photos for quicker diagnosis.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-1 inline-flex h-2 w-2 rounded-full bg-accent"></span>
+                  <span>Select urgent option only for immediate breakdowns.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <form (submit)="onSubmit($event)"
+          class="relative overflow-hidden rounded-3xl border border-[#cfe3f6] bg-gradient-to-br from-white via-[#f8fbff] to-[#edf6ff] p-7 lg:p-10 shadow-[0_22px_42px_rgba(15,23,42,0.14)] ring-1 ring-white/70">
+          <div class="pointer-events-none absolute -top-12 -right-8 h-36 w-36 rounded-full bg-primary/15 blur-2xl"></div>
+          <div class="pointer-events-none absolute -bottom-14 -left-8 h-40 w-40 rounded-full bg-accent/20 blur-2xl"></div>
+          <div class="relative z-10 grid sm:grid-cols-2 gap-4">
+            <input type="text" placeholder="Full Name" required class="h-12 rounded-xl border border-[#d7e6f5] bg-white/95 px-4 text-sm font-semibold text-primary-dark outline-none shadow-[0_8px_18px_rgba(30,120,191,0.07)] transition-all focus:border-primary focus:shadow-[0_10px_22px_rgba(30,120,191,0.18)]">
+            <input type="tel" placeholder="Phone Number" required class="h-12 rounded-xl border border-[#d7e6f5] bg-white/95 px-4 text-sm font-semibold text-primary-dark outline-none shadow-[0_8px_18px_rgba(30,120,191,0.07)] transition-all focus:border-primary focus:shadow-[0_10px_22px_rgba(30,120,191,0.18)]">
+
+            <select required class="h-12 rounded-xl border border-[#d7e6f5] bg-white/95 px-4 text-sm font-semibold text-primary-dark outline-none shadow-[0_8px_18px_rgba(30,120,191,0.07)] transition-all focus:border-primary focus:shadow-[0_10px_22px_rgba(30,120,191,0.18)] sm:col-span-2">
+              <option value="">Problem / Service</option>
+              <option>Oil Change</option>
+              <option>Battery Issue</option>
+              <option>Engine Problem</option>
+              <option>Brake Issue</option>
+              <option>Other</option>
+            </select>
+
+            <input type="text" placeholder="Car Brand (Toyota, Honda, etc.)" required class="h-12 rounded-xl border border-[#d7e6f5] bg-white/95 px-4 text-sm font-semibold text-primary-dark outline-none shadow-[0_8px_18px_rgba(30,120,191,0.07)] transition-all focus:border-primary focus:shadow-[0_10px_22px_rgba(30,120,191,0.18)]">
+            <input type="text" placeholder="Car Model" required class="h-12 rounded-xl border border-[#d7e6f5] bg-white/95 px-4 text-sm font-semibold text-primary-dark outline-none shadow-[0_8px_18px_rgba(30,120,191,0.07)] transition-all focus:border-primary focus:shadow-[0_10px_22px_rgba(30,120,191,0.18)]">
+
+            <input type="date" required class="h-12 rounded-xl border border-[#d7e6f5] bg-white/95 px-4 text-sm font-semibold text-primary-dark outline-none shadow-[0_8px_18px_rgba(30,120,191,0.07)] transition-all focus:border-primary focus:shadow-[0_10px_22px_rgba(30,120,191,0.18)]">
+            <select required class="h-12 rounded-xl border border-[#d7e6f5] bg-white/95 px-4 text-sm font-semibold text-primary-dark outline-none shadow-[0_8px_18px_rgba(30,120,191,0.07)] transition-all focus:border-primary focus:shadow-[0_10px_22px_rgba(30,120,191,0.18)]">
+              <option value="">Preferred Time Slot</option>
+              <option>08:00 AM - 10:00 AM</option>
+              <option>10:00 AM - 12:00 PM</option>
+              <option>12:00 PM - 02:00 PM</option>
+              <option>02:00 PM - 04:00 PM</option>
+              <option>04:00 PM - 06:00 PM</option>
+              <option>06:00 PM - 08:00 PM</option>
+            </select>
+
+            <select required class="h-12 rounded-xl border border-[#d7e6f5] bg-white/95 px-4 text-sm font-semibold text-primary-dark outline-none shadow-[0_8px_18px_rgba(30,120,191,0.07)] transition-all focus:border-primary focus:shadow-[0_10px_22px_rgba(30,120,191,0.18)]">
+              <option value="">Urgency Option</option>
+              <option>Normal</option>
+              <option>Urgent (extra charges may apply)</option>
+            </select>
+            <select required class="h-12 rounded-xl border border-[#d7e6f5] bg-white/95 px-4 text-sm font-semibold text-primary-dark outline-none shadow-[0_8px_18px_rgba(30,120,191,0.07)] transition-all focus:border-primary focus:shadow-[0_10px_22px_rgba(30,120,191,0.18)]">
+              <option value="">Contact Preference</option>
+              <option>Call</option>
+              <option>WhatsApp</option>
+            </select>
+
+            <input type="text" placeholder="City / Location" required class="h-12 rounded-xl border border-[#d7e6f5] bg-white/95 px-4 text-sm font-semibold text-primary-dark outline-none shadow-[0_8px_18px_rgba(30,120,191,0.07)] transition-all focus:border-primary focus:shadow-[0_10px_22px_rgba(30,120,191,0.18)] sm:col-span-2">
+            <textarea placeholder="Describe your issue" rows="4" class="rounded-xl border border-[#d7e6f5] bg-white/95 px-4 py-3 text-sm font-semibold text-primary-dark outline-none shadow-[0_8px_18px_rgba(30,120,191,0.07)] transition-all focus:border-primary focus:shadow-[0_10px_22px_rgba(30,120,191,0.18)] sm:col-span-2"></textarea>
+
+            <div class="sm:col-span-2 rounded-xl border border-dashed border-[#9ec7ea] bg-white/80 px-4 py-3">
+              <label class="block text-[11px] font-black uppercase tracking-[0.14em] text-primary">Upload Image (Pro Feature)</label>
+              <p class="mt-1 text-xs font-semibold text-primary-dark/70">Attach a photo of your car/problem for faster diagnosis.</p>
+              <input type="file" accept="image/*" class="mt-3 block w-full text-xs font-semibold text-primary-dark file:mr-3 file:rounded-lg file:border-0 file:bg-primary file:px-3 file:py-2 file:text-[11px] file:font-black file:uppercase file:tracking-[0.12em] file:text-white hover:file:bg-accent hover:file:text-primary-dark">
+            </div>
+          </div>
+          <button type="submit"
+            class="mt-5 w-full rounded-xl bg-gradient-to-r from-primary via-[#2f8dd1] to-[#1a6bab] px-6 py-3.5 text-white font-black uppercase text-xs tracking-[0.14em] shadow-[0_14px_26px_rgba(30,120,191,0.32)] transition-all hover:-translate-y-0.5 hover:from-accent hover:to-[#79d24f] hover:text-primary-dark hover:shadow-[0_16px_28px_rgba(141,198,63,0.35)]">
+            Confirm Booking
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>

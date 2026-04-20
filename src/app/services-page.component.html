@@ -1,0 +1,155 @@
+<main class="w-full pt-20">
+  <section class="relative min-h-[70vh] flex items-center bg-gradient-to-br from-[#eaf3fb] via-[#f4f9ff] to-[#ecf7de] pt-20 pb-16 lg:pt-24 lg:pb-20">
+    <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-4xl mx-auto text-center space-y-8">
+        <div>
+          <div class="inline-flex items-center bg-primary/10 border border-primary/20 rounded-full px-4 py-2 mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+            <span class="text-primary text-sm font-bold tracking-[0.08em] uppercase">Professional Automotive Services</span>
+          </div>
+          <h1 class="text-5xl md:text-7xl font-black leading-tight uppercase text-primary-dark">
+            <span class="text-primary">Expert</span> Mobile<br>Mechanic
+          </h1>
+        </div>
+
+        <p class="text-xl max-w-3xl mx-auto leading-relaxed text-gray-700 font-medium">
+          From urgent mobile repairs to full vehicle inspections, we provide certified on-site automotive support
+          across the UK and the US, delivering dependable workmanship, transparent diagnostics, and fast response
+          when you need it most.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-4 mb-3">
+          <div class="flex items-center gap-2 bg-gradient-to-b from-white to-[#edf6ff] border border-[#cfe3f6] rounded-xl px-4 py-3 shadow-[0_10px_18px_rgba(30,120,191,0.18)] ring-1 ring-white/70 transition-all hover:-translate-y-1 hover:shadow-[0_14px_24px_rgba(30,120,191,0.24)]">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span class="text-sm font-semibold text-primary-dark">24/7 Service</span>
+          </div>
+          <div class="flex items-center gap-2 bg-gradient-to-b from-white to-[#edf6ff] border border-[#cfe3f6] rounded-xl px-4 py-3 shadow-[0_10px_18px_rgba(30,120,191,0.18)] ring-1 ring-white/70 transition-all hover:-translate-y-1 hover:shadow-[0_14px_24px_rgba(30,120,191,0.24)]">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>
+            <span class="text-sm font-semibold text-primary-dark">Guaranteed Work</span>
+          </div>
+          <div class="flex items-center gap-2 bg-gradient-to-b from-white to-[#edf6ff] border border-[#cfe3f6] rounded-xl px-4 py-3 shadow-[0_10px_18px_rgba(30,120,191,0.18)] ring-1 ring-white/70 transition-all hover:-translate-y-1 hover:shadow-[0_14px_24px_rgba(30,120,191,0.24)]">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <span class="text-sm font-semibold text-primary-dark">Expert Technicians</span>
+          </div>
+          <div class="flex items-center gap-2 bg-gradient-to-b from-white to-[#edf6ff] border border-[#cfe3f6] rounded-xl px-4 py-3 shadow-[0_10px_18px_rgba(30,120,191,0.18)] ring-1 ring-white/70 transition-all hover:-translate-y-1 hover:shadow-[0_14px_24px_rgba(30,120,191,0.24)]">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+            <span class="text-sm font-semibold text-primary-dark">All Vehicle Types</span>
+          </div>
+        </div>
+
+        <div class="flex gap-4 justify-center">
+          <a [routerLink]="['/appointment']" class="inline-flex items-center justify-center h-12 rounded-xl bg-primary text-white hover:bg-accent hover:text-primary-dark font-black px-8 uppercase tracking-[0.1em] text-xs transition-colors">
+            Book Service Now
+          </a>
+          <a [routerLink]="['/contact']" class="inline-flex items-center justify-center h-12 rounded-xl px-8 border border-primary text-primary hover:bg-primary hover:text-white font-black uppercase tracking-[0.1em] text-xs transition-colors">
+            Get Free Quote
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-14 lg:py-18 bg-[#f4f9ff]">
+    <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <p class="text-primary text-[11px] font-black uppercase tracking-[0.28em]">Our Services</p>
+        <h1 class="mt-3 text-4xl lg:text-5xl font-black uppercase text-primary-dark">
+          Premium Auto Services
+        </h1>
+        <div class="mx-auto mt-3 mb-4 h-1 w-24 rounded-full bg-accent"></div>
+        <p class="mt-4 text-gray-600 font-semibold max-w-3xl mx-auto">
+          Dedicated mobile mechanical support, planned maintenance, and emergency roadside coverage.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+        <article *ngFor="let service of serviceCards" class="group rounded-3xl overflow-hidden border border-[#cfe3f6] bg-white shadow-[0_16px_34px_rgba(30,120,191,0.14)]">
+          <div class="relative h-64">
+            <img [src]="service.image" [alt]="service.title" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a]/55 to-transparent"></div>
+            <span class="absolute top-4 right-4 rounded-full bg-accent px-4 py-1.5 text-[10px] font-black uppercase tracking-widest text-[#0b1023] shadow-lg">
+              {{ service.price }}
+            </span>
+          </div>
+          <div class="p-5 lg:p-6">
+            <h2 class="text-2xl font-black uppercase text-primary-dark">{{ service.title }}</h2>
+            <p class="mt-2.5 text-gray-600 font-medium">{{ service.description }}</p>
+            <div class="mt-3.5 space-y-1.5">
+              <div *ngFor="let item of service.points" class="flex items-center gap-2 text-[13px] font-semibold text-primary-dark/85">
+                <span class="inline-flex h-4 w-4 items-center justify-center rounded-full border border-accent text-accent">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-2.5 w-2.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+                <span>{{ item }}</span>
+              </div>
+            </div>
+            <a [routerLink]="['/appointment']" class="mt-4 inline-block rounded-xl bg-primary px-8 py-3 text-white text-xs font-black uppercase tracking-widest hover:bg-accent hover:text-primary-dark transition-colors">
+              Book Service
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gradient-to-r from-[#eef4fb] via-[#f8fbff] to-[#f7f3ea] py-14 md:py-20 border-y border-[#dbe9f6]">
+    <div class="w-full max-w-6xl mx-auto px-4 md:px-6">
+      <div class="text-center mb-10">
+        <h2 class="text-4xl md:text-5xl font-black text-primary-dark mb-4">Need Service Right Now?</h2>
+        <div class="mx-auto mb-4 h-1 w-28 rounded-full bg-accent"></div>
+        <p class="text-primary-dark/80 text-xl max-w-3xl mx-auto">
+          Don't wait for problems to get worse. Get professional automotive service today with our rapid response team.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+        <div class="group bg-gradient-to-b from-white via-[#f6fbff] to-[#eaf4ff] border border-[#cfe3f6] rounded-2xl p-6 text-center shadow-[0_14px_26px_rgba(30,120,191,0.16)] ring-1 ring-white/75 transition-all hover:-translate-y-1 hover:shadow-[0_20px_34px_rgba(30,120,191,0.22)]">
+          <span class="mx-auto mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_8px_14px_rgba(30,120,191,0.2)]">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </span>
+          <div class="text-primary-dark font-bold text-2 tracking-wide">24/7 Service</div>
+          <div class="text-primary-dark/70 text-sm mt-1">Always available</div>
+        </div>
+        <div class="group bg-gradient-to-b from-white via-[#f6fbff] to-[#eaf4ff] border border-[#cfe3f6] rounded-2xl p-6 text-center shadow-[0_14px_26px_rgba(30,120,191,0.16)] ring-1 ring-white/75 transition-all hover:-translate-y-1 hover:shadow-[0_20px_34px_rgba(30,120,191,0.22)]">
+          <span class="mx-auto mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_8px_14px_rgba(30,120,191,0.2)]">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          </span>
+          <div class="text-primary-dark font-bold tracking-wide">Instant Response</div>
+          <div class="text-primary-dark/70 text-sm mt-1">Quick pickup</div>
+        </div>
+        <div class="group bg-gradient-to-b from-white via-[#f6fbff] to-[#eaf4ff] border border-[#cfe3f6] rounded-2xl p-6 text-center shadow-[0_14px_26px_rgba(30,120,191,0.16)] ring-1 ring-white/75 transition-all hover:-translate-y-1 hover:shadow-[0_20px_34px_rgba(30,120,191,0.22)]">
+          <span class="mx-auto mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_8px_14px_rgba(30,120,191,0.2)]">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
+          </span>
+          <div class="text-primary-dark font-bold tracking-wide">WhatsApp Ready</div>
+          <div class="text-primary-dark/70 text-sm mt-1">Chat support</div>
+        </div>
+        <div class="group bg-gradient-to-b from-white via-[#f6fbff] to-[#eaf4ff] border border-[#cfe3f6] rounded-2xl p-6 text-center shadow-[0_14px_26px_rgba(30,120,191,0.16)] ring-1 ring-white/75 transition-all hover:-translate-y-1 hover:shadow-[0_20px_34px_rgba(30,120,191,0.22)]">
+          <span class="mx-auto mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_8px_14px_rgba(30,120,191,0.2)]">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>
+          </span>
+          <div class="text-primary-dark font-bold tracking-wide">Easy Booking</div>
+          <div class="text-primary-dark/70 text-sm mt-1">Online scheduling</div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:+923281642297" class="inline-flex items-center justify-center h-12 rounded-xl bg-primary text-white hover:bg-accent hover:text-primary-dark font-black px-8 tracking-[0.06em] text-sm transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          Call: +923281642297
+        </a>
+        <a href="https://wa.me/923281642297" target="_blank" class="inline-flex items-center justify-center h-12 rounded-xl px-8 border border-primary text-primary hover:bg-primary hover:text-white font-black tracking-[0.06em] text-sm transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
+          +923281642297
+        </a>
+        <a [routerLink]="['/appointment']" class="inline-flex items-center justify-center h-12 rounded-xl px-8 border border-primary text-primary hover:bg-primary hover:text-white font-black tracking-[0.06em] text-sm transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>
+          Book Online
+        </a>
+      </div>
+
+      <div class="text-center mt-7">
+        <p class="text-primary-dark/70 text-sm">* Emergency services available 24/7. Standard rates apply for after-hours service.</p>
+      </div>
+    </div>
+  </section>
+</main>

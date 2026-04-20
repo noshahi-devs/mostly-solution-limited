@@ -35,3 +35,17 @@
     min-height: 9.5rem;
   }
 }
+
+@media (max-width: 639px) {
+  .mobile-brand-3d {
+    color: #1E77BD;
+    text-shadow:
+      0 1px 0 #e9f4ff,
+      0 2px 0 #cfe7fb,
+      0 3px 0 #9ec9ee,
+      0 5px 8px rgba(8, 47, 82, 0.28);
+    transform: perspective(520px) rotateX(8deg) translateZ(0);
+    transform-origin: left center;
+    letter-spacing: 0.03em;
+  }
+}

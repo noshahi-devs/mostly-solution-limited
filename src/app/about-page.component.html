@@ -1,0 +1,235 @@
+﻿<main class="w-full pt-20 about-root">
+  <section class="relative min-h-[84vh] lg:min-h-[88vh] flex items-center overflow-hidden about-hero">
+    <div class="absolute inset-0">
+      <img src="https://media.istockphoto.com/id/1347150429/photo/professional-mechanic-working-on-the-engine-of-the-car-in-the-garage.jpg?s=612x612&w=0&k=20&c=5zlDGgLNNaWsp_jq_L1AsGT85wrzpdl3kVH-75S-zTU=" alt="Mechanic Workshop" class="h-full w-full object-cover" loading="lazy">
+      <div class="absolute inset-0 bg-gradient-to-r from-[#02060f]/97 via-[#02060f]/88 to-[#02060f]/78"></div>
+    </div>
+
+    <div class="floating-icon floating-icon-1">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94z"></path></svg>
+    </div>
+    <div class="floating-icon floating-icon-2">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 13h3l2 5 4-12 3 7h6"></path></svg>
+    </div>
+    <div class="floating-icon floating-icon-3">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"></path></svg>
+    </div>
+
+    <div class="relative z-10 max-w-[1320px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <div class="max-w-4xl reveal is-visible">
+        <p class="text-accent text-[11px] font-black uppercase tracking-[0.28em]">About Mostly Solutions Limited</p>
+        <h1 class="mt-4 text-white text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-[1.05]">
+          We Bring Car Repair<br>To Your Doorstep
+        </h1>
+        <span class="mt-4 block h-[3px] w-44 rounded-full bg-accent"></span>
+        <p class="mt-6 text-white/85 text-lg md:text-xl max-w-3xl font-medium leading-relaxed">
+          Premium mobile mechanic support built for convenience, reliability, and rapid response wherever your vehicle needs attention.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a [routerLink]="['/appointment']" class="inline-flex items-center justify-center rounded-xl bg-primary text-white hover:bg-accent hover:text-primary-dark px-8 py-3.5 text-xs font-black uppercase tracking-[0.12em] transition-colors shadow-[0_14px_28px_rgba(30,120,191,0.35)]">
+            Book Service Now
+          </a>
+          <a href="https://wa.me/923281642297" target="_blank" class="inline-flex items-center justify-center rounded-xl border border-white/45 bg-white/10 text-white px-8 py-3.5 text-xs font-black uppercase tracking-[0.12em] hover:border-accent hover:text-accent transition-colors">
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 lg:py-24">
+    <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div class="reveal">
+          <p class="text-primary text-[11px] font-black uppercase tracking-[0.28em]">Who We Are</p>
+          <h2 class="mt-3 text-3xl lg:text-5xl font-black uppercase text-primary-dark">Trusted Mobile Auto Experts</h2>
+          <span class="mt-3 block h-[3px] w-44 rounded-full bg-accent"></span>
+          <p class="mt-5 text-primary-dark/80 text-lg leading-relaxed font-medium">
+            Mostly Solutions Limited started with one goal: remove the stress of workshop visits by taking professional mechanic services directly to our customers.
+          </p>
+          <p class="mt-4 text-primary-dark/75 leading-relaxed font-medium">
+            From diagnostics to full repairs, our team combines certified expertise, modern tools, and a customer-first approach to keep your vehicle safe and road-ready.
+          </p>
+        </div>
+
+        <article class="reveal about-tilt-card" (click)="openLightbox('assets/about_team.png', 'Mostly Solutions Team')">
+          <img src="assets/about_team.png" alt="Mostly Solutions Team" class="w-full h-[420px] object-cover" loading="lazy">
+          <div class="about-tilt-glow"></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 lg:py-24 bg-[#f4f9ff] border-y border-[#d7e6f6]">
+    <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center reveal">
+        <h2 class="text-3xl lg:text-5xl font-black uppercase text-primary-dark">Mission, Vision & Goal</h2>
+        <span class="mx-auto mt-3 block h-[3px] w-56 rounded-full bg-accent"></span>
+      </div>
+
+      <div class="mt-10 grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <article *ngFor="let item of missionCards" class="reveal mission-card">
+          <div class="flex items-center gap-3">
+            <span class="mission-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path [attr.d]="item.icon"></path></svg>
+            </span>
+            <h3 class="text-xl font-black uppercase text-primary-dark">{{ item.title }}</h3>
+          </div>
+          <p class="mt-3 text-primary-dark/75 leading-relaxed">{{ item.text }}</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 lg:py-24">
+    <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center reveal">
+        <p class="text-primary text-[11px] font-black uppercase tracking-[0.28em]">Strong Advantage</p>
+        <h2 class="mt-3 text-3xl lg:text-5xl font-black uppercase text-primary-dark">Why Choose Us</h2>
+        <span class="mx-auto mt-3 block h-[3px] w-44 rounded-full bg-accent"></span>
+      </div>
+
+      <div class="mt-10 grid sm:grid-cols-2 xl:grid-cols-3 gap-5">
+        <article *ngFor="let item of whyChooseUs" class="reveal why-choose-card">
+          <div class="flex items-center gap-3">
+            <span class="why-choose-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path [attr.d]="item.icon"></path></svg>
+            </span>
+            <h3 class="text-lg font-black uppercase text-primary-dark">{{ item.title }}</h3>
+          </div>
+          <p class="mt-2 text-primary-dark/75 text-sm leading-relaxed">{{ item.text }}</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 lg:py-24 bg-[#f4f9ff] border-y border-[#d7e6f6]">
+    <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center reveal">
+        <h2 class="text-3xl lg:text-5xl font-black uppercase text-primary-dark">Our Process</h2>
+        <span class="mx-auto mt-3 block h-[3px] w-36 rounded-full bg-accent"></span>
+      </div>
+
+      <div class="mt-12 process-grid">
+        <article *ngFor="let step of processSteps; let i = index" class="reveal process-step"
+          [attr.data-process-index]="i"
+          [class.process-in-view-play]="autoPlayingProcessIndexes.has(i)">
+          <div class="flex items-center gap-3">
+            <span class="process-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path [attr.d]="step.icon"></path></svg>
+            </span>
+            <h3 class="text-lg font-black uppercase text-primary-dark">{{ step.title }}</h3>
+          </div>
+          <p class="mt-3 text-primary-dark/75 text-sm">{{ step.text }}</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 lg:py-24">
+    <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center reveal">
+        <h2 class="text-3xl lg:text-5xl font-black uppercase text-primary-dark">Meet Our Mechanics</h2>
+        <span class="mx-auto mt-3 block h-[3px] w-48 rounded-full bg-accent"></span>
+      </div>
+
+      <div class="mt-10 grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <article *ngFor="let member of teamMembers" class="reveal team-flip-card" (click)="openLightbox(member.image, member.name)">
+          <div class="team-flip-inner">
+            <div class="team-front">
+              <img [src]="member.image" [alt]="member.name" loading="lazy" class="h-[350px] w-full object-cover">
+              <div class="team-content">
+                <h3 class="text-lg font-black uppercase text-white">{{ member.name }}</h3>
+                <p class="text-white/85 text-xs font-bold uppercase tracking-[0.12em]">{{ member.role }}</p>
+              </div>
+            </div>
+            <div class="team-back">
+              <p class="team-back-label">Professional Profile</p>
+              <h3 class="team-back-heading">Service Highlights</h3>
+              <p class="team-back-bio">{{ member.bio }}</p>
+              <p class="team-back-subtitle">Core Expertise</p>
+              <div class="team-chip-wrap">
+                <span *ngFor="let skill of member.skills" class="team-chip">{{ skill }}</span>
+              </div>
+              <span class="team-back-note">Available For Emergency & Scheduled Service</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 lg:py-24 bg-[#f4f9ff] border-y border-[#d7e6f6]">
+    <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center reveal">
+        <h2 class="text-3xl lg:text-5xl font-black uppercase text-primary-dark">Service In Motion</h2>
+        <span class="mx-auto mt-3 block h-[3px] w-44 rounded-full bg-accent"></span>
+        <p class="mt-4 text-primary-dark/75 text-lg max-w-3xl mx-auto">Hover cards to preview mechanic workflow videos.</p>
+      </div>
+
+      <div class="mt-10 grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <article
+          *ngFor="let item of videoCards; let i = index"
+          class="reveal video-hover-card"
+          [attr.data-video-index]="i"
+          [class.video-in-view-play]="autoPlayingVideoIndexes.has(i)"
+          (mouseenter)="playHoverVideo(hoverVideo)"
+          (mouseleave)="pauseHoverVideo(hoverVideo)"
+        >
+          <div class="video-stage">
+            <img [src]="item.thumbnail" [alt]="item.title" loading="lazy" class="video-thumb">
+            <video #hoverVideo [src]="item.video" muted loop playsinline preload="metadata" class="video-overlay"></video>
+            <div class="video-dim"></div>
+          </div>
+          <div class="p-5">
+            <h3 class="text-lg font-black uppercase text-primary-dark">{{ item.title }}</h3>
+            <p class="mt-2 text-sm text-primary-dark/75">{{ item.subtitle }}</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="about-stats" class="py-20 lg:py-24">
+    <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal stats-shell">
+        <div class="text-center">
+          <h2 class="text-3xl lg:text-5xl font-black uppercase text-white">Our Track Record</h2>
+          <span class="mx-auto mt-3 block h-[3px] w-40 rounded-full bg-accent"></span>
+        </div>
+
+        <div class="mt-10 grid md:grid-cols-3 gap-5">
+          <article *ngFor="let stat of stats; let i = index" class="stats-card">
+            <p class="text-4xl lg:text-5xl font-black text-accent">{{ statValues[i] }}{{ stat.suffix }}</p>
+            <p class="mt-2 text-white/85 font-black uppercase text-[11px] tracking-[0.16em]">{{ stat.label }}</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pb-14 lg:pb-16">
+    <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal final-cta">
+        <h2 class="text-3xl lg:text-5xl font-black uppercase text-primary-dark text-center">Need A Mechanic? We Are Just One Call Away</h2>
+        <span class="mx-auto mt-3 block h-[3px] w-64 rounded-full bg-primary"></span>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a href="tel:+923281642297" class="inline-flex items-center justify-center rounded-xl bg-primary text-white px-8 py-3.5 font-black uppercase tracking-[0.12em] text-xs hover:bg-primary-dark transition-colors">
+            Call Now
+          </a>
+          <a href="https://wa.me/923281642297" target="_blank" class="inline-flex items-center justify-center rounded-xl border border-primary-dark text-primary-dark px-8 py-3.5 font-black uppercase tracking-[0.12em] text-xs hover:bg-primary-dark hover:text-white transition-colors">
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div *ngIf="lightboxOpen" class="fixed inset-0 z-[130] bg-[#02060f]/90 backdrop-blur-sm flex items-center justify-center p-4" (click)="closeLightbox()">
+    <button type="button" class="absolute top-5 right-5 h-11 w-11 rounded-full bg-white/15 text-white hover:bg-accent hover:text-primary-dark transition-colors" (click)="closeLightbox(); $event.stopPropagation()">X</button>
+    <figure class="max-w-5xl w-full" (click)="$event.stopPropagation()">
+      <img [src]="lightboxImage" [alt]="lightboxTitle" class="w-full max-h-[80vh] object-contain rounded-2xl border border-white/25 shadow-[0_25px_55px_rgba(0,0,0,0.5)]">
+      <figcaption class="mt-4 text-center text-white font-black uppercase tracking-[0.12em]">{{ lightboxTitle }}</figcaption>
+    </figure>
+  </div>
+</main>

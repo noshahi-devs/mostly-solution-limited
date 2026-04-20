@@ -1,0 +1,126 @@
+<main class="w-full pt-20 contact-page">
+  <section class="contact-hero">
+    <div class="contact-hero-media">
+      <img src="assets/mechanic_hero_bg_1776492390130.png" alt="Mechanic Workshop" loading="lazy">
+      <div class="contact-hero-overlay"></div>
+    </div>
+
+    <div class="contact-shell">
+      <div class="contact-hero-grid">
+        <article class="contact-hero-copy">
+          <p class="contact-kicker">Get In Touch With Us</p>
+          <h1>Contact Mobile Mechanic Support</h1>
+          <p class="contact-lead">
+            Ready to service your vehicle? Reach out for immediate assistance, transparent quotes, and dependable roadside support.
+          </p>
+
+          <div class="contact-hero-actions">
+            <a href="tel:+15554102233" class="contact-btn contact-btn-primary">Call Now</a>
+            <a href="https://wa.me/15554102233" target="_blank" class="contact-btn contact-btn-outline">WhatsApp Chat</a>
+          </div>
+        </article>
+
+        <div class="contact-hero-panels">
+          <article class="contact-info-card" *ngFor="let item of quickContacts">
+            <p class="contact-info-label">{{ item.label }}</p>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.value }}</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-emergency">
+    <div class="contact-shell">
+      <div class="contact-emergency-wrap">
+        <div>
+          <p class="contact-kicker contact-kicker-dark">Emergency Service</p>
+          <h2>24/7 Roadside Assistance Available</h2>
+          <p>Vehicle breakdown or urgent issue? Our team is ready for rapid dispatch.</p>
+        </div>
+        <div class="contact-emergency-numbers">
+          <a href="tel:+15554102233">+1 (555) 410-2233</a>
+          <a href="tel:+447760749992">+44 7760 749992</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-main">
+    <div class="contact-shell">
+      <div class="contact-main-grid">
+        <form (submit)="onSubmit($event)" class="contact-form-card">
+          <p class="contact-kicker contact-kicker-dark">Send Us A Message</p>
+          <h2>We Reply Within 24 Hours</h2>
+
+          <div class="contact-form-grid">
+            <input type="text" required placeholder="Full Name">
+            <input type="email" required placeholder="Email Address">
+            <input type="tel" required placeholder="Phone Number">
+            <select required>
+              <option value="" selected disabled>Preferred Location</option>
+              <option *ngFor="let location of locations" [value]="location.country">{{ location.city }}, {{ location.country }}</option>
+            </select>
+            <textarea rows="5" required placeholder="Tell us your issue or service request"></textarea>
+            <button type="submit">Send Message</button>
+          </div>
+        </form>
+
+        <aside class="contact-benefits-card">
+          <p class="contact-kicker contact-kicker-dark">Why Choose Mostly Solutions</p>
+          <h3>Professional Service At Your Location</h3>
+
+          <ul>
+            <li *ngFor="let reason of reasons">{{ reason }}</li>
+          </ul>
+
+          <div class="contact-side-cta">
+            <p>Need Immediate Help?</p>
+            <a href="tel:+15554102233">Call Emergency Line</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-locations">
+    <div class="contact-shell">
+      <div class="contact-section-head">
+        <p class="contact-kicker contact-kicker-dark">Our Locations</p>
+        <h2>Serving Multiple Regions With Same Quality</h2>
+      </div>
+
+      <div class="contact-location-grid">
+        <article class="contact-location-card" *ngFor="let location of locations">
+          <p class="contact-location-flag">{{ location.country }}</p>
+          <h3>{{ location.city }}</h3>
+          <p>{{ location.address }}</p>
+          <a [href]="'tel:' + location.phonePlain">{{ location.phone }}</a>
+          <span>{{ location.hours }}</span>
+        </article>
+      </div>
+
+      <div class="contact-faq-wrap">
+        <div class="contact-section-head">
+          <p class="contact-kicker contact-kicker-dark">People Ask Questions</p>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+
+        <div class="contact-faq-list">
+          <article
+            class="contact-faq-item"
+            *ngFor="let faq of faqs; let i = index"
+            [class.is-open]="activeFaqIndex === i"
+          >
+            <button type="button" class="contact-faq-q" (click)="toggleFaq(i)">
+              <span>{{ faq.question }}</span>
+              <span class="contact-faq-icon">{{ activeFaqIndex === i ? '−' : '+' }}</span>
+            </button>
+            <p class="contact-faq-a" *ngIf="activeFaqIndex === i">{{ faq.answer }}</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
