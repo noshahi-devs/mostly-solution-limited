@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 interface QuickContact {
   label: string;
@@ -24,7 +25,7 @@ interface FaqItem {
 @Component({
   selector: 'app-contact-page',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './contact-page.component.html'
 })
 export class ContactPageComponent {
@@ -34,7 +35,7 @@ export class ContactPageComponent {
     {
       label: 'Call Us',
       title: 'Immediate Response',
-      value: '+1 (555) 410-2233'
+      value: '+44 118 555 0194'
     },
     {
       label: 'Email Us',
@@ -58,11 +59,11 @@ export class ContactPageComponent {
 
   readonly locations: LocationInfo[] = [
     {
-      country: 'United States',
-      city: 'Houston',
-      address: '2450 West Loop South, Houston, TX 77027',
-      phone: '+1 (555) 410-2233',
-      phonePlain: '+15554102233',
+      country: 'United Kingdom',
+      city: 'Reading Office',
+      address: '45 Friar Street, Reading RG1',
+      phone: '+44 118 555 0194',
+      phonePlain: '+441185550194',
       hours: '24/7 Service Available'
     },
     {
@@ -94,7 +95,7 @@ export class ContactPageComponent {
     },
     {
       question: 'Do you cover both US and UK locations?',
-      answer: 'Yes. We currently serve selected cities in the United States and the United Kingdom with consistent service standards.'
+      answer: 'Our current office coverage is focused on the United Kingdom, including Reading and London, with consistent service standards.'
     },
     {
       question: 'Is there any warranty on repairs?',

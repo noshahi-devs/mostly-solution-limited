@@ -29,6 +29,12 @@ interface StatItem {
   suffix: string;
 }
 
+interface ServiceGroup {
+  title: string;
+  tagline: string;
+  items: string[];
+}
+
 @Component({
   selector: 'app-about-page',
   standalone: true,
@@ -61,7 +67,7 @@ export class AboutPageComponent implements AfterViewInit, OnDestroy {
   readonly missionCards: AboutCard[] = [
     {
       title: 'Our Mission',
-      text: 'Deliver reliable mobile mechanic support with transparent diagnostics, fair pricing, and safety-first standards.',
+      text: 'Deliver reliable auto care with transparent diagnostics, inspection-based quotes, and safety-first standards.',
       icon: 'M12 2l3 6.5L22 10l-5 4.8L18.2 22 12 18.8 5.8 22 7 14.8 2 10l7-1.5L12 2z'
     },
     {
@@ -94,7 +100,7 @@ export class AboutPageComponent implements AfterViewInit, OnDestroy {
     },
     {
       title: 'Affordable Pricing',
-      text: 'Clear quotations and value-driven service without hidden costs.',
+      text: 'Fair inspection-based quotes that match each vehicle and level of damage.',
       icon: 'M12 2v20M17 6.5A4.5 4.5 0 0012 4a4.5 4.5 0 000 9 4.5 4.5 0 010 9 4.5 4.5 0 01-5-2.5'
     },
     {
@@ -104,8 +110,52 @@ export class AboutPageComponent implements AfterViewInit, OnDestroy {
     },
     {
       title: '24/7 Support',
-      text: 'Always-on support team for urgent and scheduled requirements.',
+      text: 'Round-the-clock customer support plus 24/7 recovery assistance.',
       icon: 'M12 6v6l4 2M22 12a10 10 0 11-20 0 10 10 0 0120 0z'
+    }
+  ];
+
+  readonly serviceGroups: ServiceGroup[] = [
+    {
+      title: 'Bodywork & Paint',
+      tagline: 'Quotes are based on visual inspection and panel damage.',
+      items: [
+        'Smart repair panels and bumper repairs',
+        'Bumper and small panel respray',
+        'Dent and crack correction before paintwork',
+        'Alloy wheel refurbishment and bonnet respray',
+        'Full body paint jobs and panel correction'
+      ]
+    },
+    {
+      title: 'Remap & Performance',
+      tagline: 'Tailored tuning based on vehicle model and current condition.',
+      items: [
+        'ECU remap for smoother delivery',
+        'Stage setup guidance for daily and performance builds',
+        'Diagnostics before and after remap',
+        'Safe performance optimization with clear recommendations'
+      ]
+    },
+    {
+      title: 'Detailing & Protection',
+      tagline: 'Packages adjusted by paint condition and interior requirements.',
+      items: [
+        'Inside and out valet and deep clean',
+        'Paint correction and restoration',
+        'Exterior gloss refresh and protection',
+        'Interior trim care and finishing'
+      ]
+    },
+    {
+      title: 'Recovery 24/7',
+      tagline: 'Emergency recovery service available day and night.',
+      items: [
+        'Roadside and breakdown recovery',
+        'Safe transport to workshop or preferred location',
+        'Priority call handling for urgent cases',
+        'Support available across London and Reading'
+      ]
     }
   ];
 

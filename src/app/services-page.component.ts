@@ -2,6 +2,13 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
+interface ServiceGroup {
+  title: string;
+  tagline: string;
+  image: string;
+  items: string[];
+}
+
 @Component({
   selector: 'app-services-page',
   standalone: true,
@@ -9,34 +16,51 @@ import { RouterLink } from '@angular/router';
   templateUrl: './services-page.component.html'
 })
 export class ServicesPageComponent {
-  readonly serviceCards = [
+  readonly serviceGroups: ServiceGroup[] = [
     {
-      title: 'Mobile Mechanic',
-      price: 'From GBP 45',
-      description: '24/7 immediate support with rapid response and repair at any location.',
-      image: 'assets/service_engine_diagnostic_1776492556369.png',
-      points: ['24/7 Availability', 'On-site Repairs', 'Emergency Response', 'All Locations']
-    },
-    {
-      title: 'Comprehensive Vehicle Inspections',
-      price: 'From GBP 85',
-      description: 'Pre-purchase, pre-trip, and detailed diagnostics to ensure vehicle readiness and performance.',
-      image: 'https://media.istockphoto.com/id/2203010081/photo/diagnostic-car-software-in-the-car-service.jpg?s=612x612&w=0&k=20&c=8ZbFhQwyd15iXnFp_NfiOp-W6NN9tNd5lgLZp-RNaEc=',
-      points: ['Pre-purchase Inspection', 'Diagnostic Testing', 'Performance Analysis', 'Detailed Reports']
-    },
-    {
-      title: 'Repair Services',
-      price: 'From GBP 65',
-      description: 'Minor and major repairs for various vehicle types and brands, ensuring quick turnaround times.',
+      title: 'Bodywork & Paint',
+      tagline: 'Quotes are based on visual inspection and panel damage.',
       image: 'assets/service_brake_repair_1776492609413.png',
-      points: ['Engine Repairs', 'Transmission Service', 'Brake Systems', 'Electrical Work']
+      items: [
+        'Smart repair panels and bumper repairs',
+        'Bumper and small panel respray',
+        'Dent and crack correction before paintwork',
+        'Alloy wheel refurbishment and bonnet respray',
+        'Full body paint jobs and panel correction'
+      ]
     },
     {
-      title: 'Annual Maintenance',
-      price: 'From GBP 120',
-      description: 'Scheduled maintenance including oil changes, brake inspections, tire rotations, and more.',
+      title: 'Remap & Performance',
+      tagline: 'Tailored tuning based on vehicle model and current condition.',
+      image: 'assets/service_engine_diagnostic_1776492556369.png',
+      items: [
+        'ECU remap for smoother delivery',
+        'Stage setup guidance for daily and performance builds',
+        'Diagnostics before and after remap',
+        'Safe performance optimization with clear recommendations'
+      ]
+    },
+    {
+      title: 'Detailing & Protection',
+      tagline: 'Packages adjusted by paint condition and interior requirements.',
       image: 'assets/fleet_maintenance.png',
-      points: ['Oil Changes', 'Brake Inspection', 'Tire Rotation', 'Filter Replacement']
+      items: [
+        'Inside and out valet and deep clean',
+        'Paint correction and restoration',
+        'Exterior gloss refresh and protection',
+        'Interior trim care and finishing'
+      ]
+    },
+    {
+      title: 'Recovery 24/7',
+      tagline: 'Emergency recovery service available day and night.',
+      image: 'assets/mechanic_hero_bg_1776492390130.png',
+      items: [
+        'Roadside and breakdown recovery',
+        'Safe transport to workshop or preferred location',
+        'Priority call handling for urgent cases',
+        'Support available across London and Reading'
+      ]
     }
   ];
 }

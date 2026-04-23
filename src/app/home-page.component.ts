@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -11,7 +11,11 @@ import { filter } from 'rxjs/operators';
   templateUrl: './home-page.component.html'
 })
 export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
+  @ViewChild('bookingCard') private bookingCard?: ElementRef<HTMLElement>;
+  @ViewChild('bookingVideo') private bookingVideo?: ElementRef<HTMLVideoElement>;
+
   currentServiceIndex = 0;
+  isBookingVideoActive = false;
 
   readonly heroSlides = [
     {
@@ -45,37 +49,39 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
 
   readonly serviceCards = [
     {
-      title: 'Mobile Mechanic',
-      price: 'From Â£45',
-      description: '24/7 immediate support with rapid response and repair at any location in the UK.',
+      title: 'Bodywork & Paint',
+      quote: 'Quote After Inspection',
+      description: 'Panel repairs, dent and crack correction, bumper work, and paint preparation based on visible damage.',
       image: 'assets/service_engine_diagnostic_1776492556369.png',
-      tag: 'Certified Technicians'
+      tag: 'Inspection-Based'
     },
     {
-      title: 'Vehicle Inspections',
-      price: 'From Â£85',
-      description: 'Pre-purchase and diagnostic checks to ensure vehicle readiness and safety.',
+      title: 'Remap & Performance',
+      quote: 'Vehicle-Specific Quote',
+      description: 'ECU remap and performance setup guided by diagnostics, vehicle model, and safe tuning targets.',
       image: 'assets/Mostly%20Solutions%20Limited.png',
-      tag: 'Detailed Reports'
+      tag: 'Diagnostics First'
     },
     {
-      title: 'Repair Services',
-      price: 'From Â£65',
-      description: 'Minor and major repairs for all vehicle brands using genuine parts.',
+      title: 'Detailing & Protection',
+      quote: 'Condition-Based Quote',
+      description: 'Valet, deep clean, paint correction, and restoration plans tailored to interior and paint condition.',
       image: 'assets/service_brake_repair_1776492609413.png',
-      tag: 'Expert Fixes'
+      tag: 'Showroom Finish'
     },
     {
-      title: 'Annual Maintenance',
-      price: 'From Â£120',
-      description: 'Routine maintenance including oil, brakes, filters and full diagnostic scans.',
+      title: 'Recovery Service 24/7',
+      quote: 'Emergency Dispatch',
+      description: 'Round-the-clock roadside recovery and safe vehicle transport support across London and Reading.',
       image: 'assets/fleet_maintenance.png',
-      tag: 'Elite Care'
+      tag: 'Always Available'
     }
   ];
 
   private serviceCarouselTimerId?: ReturnType<typeof setInterval>;
   private navSub?: Subscription;
+  private bookingViewportObserver?: IntersectionObserver;
+  private bookingVideoTimerId?: ReturnType<typeof setTimeout>;
 
   constructor(private readonly router: Router) {}
 
@@ -88,11 +94,16 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     setTimeout(() => this.scrollByRoute(), 0);
+    this.setupBookingViewportAutoplay();
   }
 
   ngOnDestroy(): void {
     if (this.serviceCarouselTimerId) {
       clearInterval(this.serviceCarouselTimerId);
+    }
+    this.bookingViewportObserver?.disconnect();
+    if (this.bookingVideoTimerId) {
+      clearTimeout(this.bookingVideoTimerId);
     }
     this.navSub?.unsubscribe();
   }
@@ -110,11 +121,16 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   playBookingVideo(video: HTMLVideoElement): void {
+    this.isBookingVideoActive = true;
     video.currentTime = 0;
-    void video.play();
+    const playPromise = video.play();
+    if (playPromise && typeof playPromise.catch === 'function') {
+      playPromise.catch(() => {});
+    }
   }
 
   resetBookingVideo(video: HTMLVideoElement): void {
+    this.isBookingVideoActive = false;
     video.pause();
     video.currentTime = 0;
   }
@@ -133,6 +149,55 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private startServiceCarousel(): void {
     this.serviceCarouselTimerId = setInterval(() => this.nextServiceCard(), 5000);
+  }
+
+  private setupBookingViewportAutoplay(): void {
+    if (typeof IntersectionObserver === 'undefined' || !this.bookingCard || !this.bookingVideo) {
+      return;
+    }
+
+    this.bookingViewportObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!this.isMobileViewport()) {
+            return;
+          }
+
+          if (entry.isIntersecting) {
+            if (this.bookingVideoTimerId) {
+              clearTimeout(this.bookingVideoTimerId);
+            }
+
+            this.bookingVideoTimerId = setTimeout(() => {
+              const video = this.bookingVideo?.nativeElement;
+              if (!video) {
+                return;
+              }
+
+              this.playBookingVideo(video);
+            }, 2000);
+            return;
+          }
+
+          if (this.bookingVideoTimerId) {
+            clearTimeout(this.bookingVideoTimerId);
+            this.bookingVideoTimerId = undefined;
+          }
+
+          const video = this.bookingVideo?.nativeElement;
+          if (video) {
+            this.resetBookingVideo(video);
+          }
+        });
+      },
+      { threshold: 0.6 }
+    );
+
+    this.bookingViewportObserver.observe(this.bookingCard.nativeElement);
+  }
+
+  private isMobileViewport(): boolean {
+    return window.matchMedia('(max-width: 1024px)').matches;
   }
 
   private scrollByRoute(): void {
@@ -157,3 +222,4 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 }
+

@@ -1,7 +1,18 @@
 ﻿<main class="w-full pt-20 about-root">
-  <section class="relative min-h-[84vh] lg:min-h-[88vh] flex items-center overflow-hidden about-hero">
+  <section class="relative min-h-[75vh] flex items-center overflow-hidden about-hero">
     <div class="absolute inset-0">
-      <img src="https://media.istockphoto.com/id/1347150429/photo/professional-mechanic-working-on-the-engine-of-the-car-in-the-garage.jpg?s=612x612&w=0&k=20&c=5zlDGgLNNaWsp_jq_L1AsGT85wrzpdl3kVH-75S-zTU=" alt="Mechanic Workshop" class="h-full w-full object-cover" loading="lazy">
+      <img
+        src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1920&q=90"
+        srcset="
+          https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1280&q=85 1280w,
+          https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1920&q=90 1920w,
+          https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=2560&q=90 2560w
+        "
+        sizes="100vw"
+        alt="Mechanic Workshop"
+        class="h-full w-full object-cover"
+        loading="eager"
+      >
       <div class="absolute inset-0 bg-gradient-to-r from-[#02060f]/97 via-[#02060f]/88 to-[#02060f]/78"></div>
     </div>
 
@@ -18,18 +29,23 @@
     <div class="relative z-10 max-w-[1320px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
       <div class="max-w-4xl reveal is-visible">
         <p class="text-accent text-[11px] font-black uppercase tracking-[0.28em]">About Mostly Solutions Limited</p>
-        <h1 class="mt-4 text-white text-4xl md:text-6xl lg:text-7xl font-black uppercase leading-[1.05]">
-          We Bring Car Repair<br>To Your Doorstep
+        <h1 class="mt-4 text-white text-3xl md:text-5xl lg:text-6xl font-black uppercase leading-[1.05]">
+          Bodywork, Recovery & Tuning<br>Across London And Reading
         </h1>
         <span class="mt-4 block h-[3px] w-44 rounded-full bg-accent"></span>
         <p class="mt-6 text-white/85 text-lg md:text-xl max-w-3xl font-medium leading-relaxed">
-          Premium mobile mechanic support built for convenience, reliability, and rapid response wherever your vehicle needs attention.
+          Eye-catching results with professional auto care. Every quote is tailored to your vehicle condition and level of damage after inspection.
         </p>
-        <div class="mt-8 flex flex-wrap gap-4">
-          <a [routerLink]="['/appointment']" class="inline-flex items-center justify-center rounded-xl bg-primary text-white hover:bg-accent hover:text-primary-dark px-8 py-3.5 text-xs font-black uppercase tracking-[0.12em] transition-colors shadow-[0_14px_28px_rgba(30,120,191,0.35)]">
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="inline-flex items-center rounded-full border border-white/35 bg-white/10 px-4 py-2 text-[11px] font-black uppercase tracking-[0.12em] text-white">London, UK Office</span>
+          <span class="inline-flex items-center rounded-full border border-white/35 bg-white/10 px-4 py-2 text-[11px] font-black uppercase tracking-[0.12em] text-white">Reading, UK Office</span>
+          <span class="inline-flex items-center rounded-full border border-accent/70 bg-accent/20 px-4 py-2 text-[11px] font-black uppercase tracking-[0.12em] text-accent">Recovery Service Available 24/7</span>
+        </div>
+        <div class="mt-8 grid grid-cols-2 gap-3 w-full sm:flex sm:w-auto sm:flex-wrap">
+          <a [routerLink]="['/appointment']" class="inline-flex items-center justify-center rounded-xl bg-primary text-white hover:bg-accent hover:text-primary-dark px-3 sm:px-8 py-3 sm:py-3.5 text-[10px] sm:text-xs font-black uppercase tracking-[0.08em] transition-colors shadow-[0_14px_28px_rgba(30,120,191,0.35)] whitespace-nowrap text-center">
             Book Service Now
           </a>
-          <a href="https://wa.me/923281642297" target="_blank" class="inline-flex items-center justify-center rounded-xl border border-white/45 bg-white/10 text-white px-8 py-3.5 text-xs font-black uppercase tracking-[0.12em] hover:border-accent hover:text-accent transition-colors">
+          <a href="https://wa.me/447366994696" target="_blank" class="inline-flex items-center justify-center rounded-xl border border-white/45 bg-accent text-primary-dark sm:bg-white/10 sm:text-white px-3 sm:px-8 py-3 sm:py-3.5 text-[10px] sm:text-xs font-black uppercase tracking-[0.08em] hover:border-accent hover:text-accent transition-colors whitespace-nowrap text-center">
             WhatsApp Us
           </a>
         </div>
@@ -45,16 +61,42 @@
           <h2 class="mt-3 text-3xl lg:text-5xl font-black uppercase text-primary-dark">Trusted Mobile Auto Experts</h2>
           <span class="mt-3 block h-[3px] w-44 rounded-full bg-accent"></span>
           <p class="mt-5 text-primary-dark/80 text-lg leading-relaxed font-medium">
-            Mostly Solutions Limited started with one goal: remove the stress of workshop visits by taking professional mechanic services directly to our customers.
+            Mostly Solutions Limited delivers trusted mechanic and bodywork care with rapid response, inspection-first quoting, and high-finish workmanship.
           </p>
           <p class="mt-4 text-primary-dark/75 leading-relaxed font-medium">
-            From diagnostics to full repairs, our team combines certified expertise, modern tools, and a customer-first approach to keep your vehicle safe and road-ready.
+            From diagnostics and recovery to detailing and remap support, our team combines certified expertise, modern tools, and a customer-first approach.
           </p>
         </div>
 
         <article class="reveal about-tilt-card" (click)="openLightbox('assets/about_team.png', 'Mostly Solutions Team')">
           <img src="assets/about_team.png" alt="Mostly Solutions Team" class="w-full h-[420px] object-cover" loading="lazy">
           <div class="about-tilt-glow"></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 lg:py-24 bg-[#09081a] border-y border-[#2c1c48]">
+    <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center reveal">
+        <p class="text-[11px] font-black uppercase tracking-[0.28em] text-accent">Updated Services</p>
+        <h2 class="mt-3 text-3xl lg:text-5xl font-black uppercase text-white">Bodywork, Remap, Detailing & Recovery</h2>
+        <span class="mx-auto mt-3 block h-[3px] w-72 rounded-full bg-accent"></span>
+        <p class="mt-4 text-white/80 text-lg max-w-3xl mx-auto">
+          We do not use fixed pricing. Final quote is always provided after visual inspection and based on vehicle condition and damage level.
+        </p>
+      </div>
+
+      <div class="mt-10 grid md:grid-cols-2 gap-6">
+        <article *ngFor="let group of serviceGroups" class="reveal rounded-2xl border border-white/15 bg-white/[0.03] p-6 lg:p-7 shadow-[0_20px_45px_rgba(0,0,0,0.28)]">
+          <h3 class="text-2xl font-black uppercase text-white">{{ group.title }}</h3>
+          <p class="mt-2 text-accent text-sm font-bold uppercase tracking-[0.1em]">{{ group.tagline }}</p>
+          <ul class="mt-5 space-y-2 text-white/85">
+            <li *ngFor="let item of group.items" class="flex items-start gap-2">
+              <span class="mt-2 h-2 w-2 shrink-0 rounded-full bg-accent"></span>
+              <span>{{ item }}</span>
+            </li>
+          </ul>
         </article>
       </div>
     </div>
@@ -217,11 +259,13 @@
       <div class="reveal final-cta">
         <h2 class="text-3xl lg:text-5xl font-black uppercase text-primary-dark text-center">Need A Mechanic? We Are Just One Call Away</h2>
         <span class="mx-auto mt-3 block h-[3px] w-64 rounded-full bg-primary"></span>
+        <p class="mt-4 text-center text-primary-dark/70 font-semibold">Offices in London and Reading, UK. Recovery service available 24/7.</p>
+        <p class="mt-2 text-center text-primary-dark/60 text-sm font-medium">No fixed prices. Quotes are confirmed after inspection.</p>
         <div class="mt-8 flex flex-wrap justify-center gap-4">
-          <a href="tel:+923281642297" class="inline-flex items-center justify-center rounded-xl bg-primary text-white px-8 py-3.5 font-black uppercase tracking-[0.12em] text-xs hover:bg-primary-dark transition-colors">
+          <a href="tel:+447366994696" class="inline-flex items-center justify-center rounded-xl bg-primary text-white px-8 py-3.5 font-black uppercase tracking-[0.12em] text-xs hover:bg-primary-dark transition-colors">
             Call Now
           </a>
-          <a href="https://wa.me/923281642297" target="_blank" class="inline-flex items-center justify-center rounded-xl border border-primary-dark text-primary-dark px-8 py-3.5 font-black uppercase tracking-[0.12em] text-xs hover:bg-primary-dark hover:text-white transition-colors">
+          <a href="https://wa.me/447366994696" target="_blank" class="inline-flex items-center justify-center rounded-xl border border-primary-dark text-primary-dark px-8 py-3.5 font-black uppercase tracking-[0.12em] text-xs hover:bg-primary-dark hover:text-white transition-colors">
             WhatsApp
           </a>
         </div>
