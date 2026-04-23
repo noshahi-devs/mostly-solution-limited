@@ -94,8 +94,8 @@ export class AboutPageComponent implements AfterViewInit, OnDestroy {
       icon: 'M21 7.5l-1.5-1.5-3.8 3.8 1.5 1.5L21 7.5zM14 10l-9.5 9.5a2.1 2.1 0 003 3L17 13'
     },
     {
-      title: 'On-Site Repair',
-      text: 'Home, office, and roadside service where you need us most.',
+      title: 'Recovery Service',
+      text: '24/7 roadside, breakdown, and on-site recovery support where you need us most.',
       icon: 'M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1116 0zM12 10a3 3 0 100-6 3 3 0 000 6z'
     },
     {

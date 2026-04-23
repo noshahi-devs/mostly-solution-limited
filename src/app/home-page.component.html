@@ -341,14 +341,11 @@
         <div class="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
                 <div #bookingCard
-                    class="group relative overflow-hidden rounded-3xl border border-[#cfe3f6] bg-gradient-to-br from-[#eef6ff] via-white to-[#f4fbec] p-7 lg:p-10 shadow-[0_18px_36px_rgba(30,120,191,0.12)]"
-                    (mouseenter)="playBookingVideo(bookingVideo)"
-                    (mouseleave)="resetBookingVideo(bookingVideo)">
-                    <video #bookingVideo muted loop playsinline preload="metadata"
-                        [ngClass]="isBookingVideoActive ? 'pointer-events-none absolute inset-0 h-full w-full object-cover opacity-100 transition-opacity duration-500' : 'pointer-events-none absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100'">
-                        <source src="assets/hero-bg.mp4" type="video/mp4">
-                    </video>
-                    <div [ngClass]="isBookingVideoActive ? 'pointer-events-none absolute inset-0 bg-[#0f172a]/55 transition-colors duration-500' : 'pointer-events-none absolute inset-0 bg-[#0f172a]/0 transition-colors duration-500 group-hover:bg-[#0f172a]/55'"></div>
+                    class="group relative overflow-hidden rounded-3xl border border-[#b9d7f2] bg-gradient-to-br from-[#dff0ff] via-[#f8fbff] to-[#eef8e8] p-7 lg:p-10 shadow-[0_18px_36px_rgba(30,120,191,0.12)]">
+                    <div class="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#dff0ff] via-[#f8fbff] to-[#eef8e8] transition-all duration-500 group-hover:from-[#0f172a] group-hover:via-[#1E78BF] group-hover:to-[#79d24f]"></div>
+                    <div class="pointer-events-none absolute inset-0 bg-[#0f172a]/0 transition-colors duration-500 group-hover:bg-[#0f172a]/50"></div>
+                    <div class="pointer-events-none absolute -top-20 right-[-30px] h-48 w-48 rounded-full bg-white/45 blur-3xl transition-opacity duration-500 group-hover:opacity-30"></div>
+                    <div class="pointer-events-none absolute -bottom-24 left-[-20px] h-56 w-56 rounded-full bg-primary/20 blur-3xl transition-opacity duration-500 group-hover:opacity-40"></div>
 
                     <div class="relative z-10">
                         <p class="text-primary font-black uppercase text-[10px] tracking-[0.24em] transition-colors duration-300 group-hover:text-white/90">Quick Booking</p>
@@ -440,7 +437,7 @@
                     <div class="why-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.2a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.2a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3h.1a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.2a1.7 1.7 0 0 0 1 1.5h.1a1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8v.1a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.2a1.7 1.7 0 0 0-1.5 1z"/></svg>
                     </div>
-                    <h4 class="text-primary-dark font-black uppercase text-xs tracking-[0.08em]">Skilled Technicians</h4>
+                    <h4 class="text-primary-dark font-black uppercase text-xs tracking-[0.08em]">Recovery Service Technicians</h4>
                 </article>
 
                 <article class="why-card">
