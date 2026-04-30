@@ -19,11 +19,10 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
 
   readonly heroSlides = [
     {
-      title: 'UKâ€™s #1 Mobile Car Repairing',
+      title: "UK's #1 Mobile Car Repairing",
       subtitle: 'Highly Reliable & Professional',
       description:
         'Expert mechanical support at your doorstep. We bring the garage to you, anywhere in England with 24/7 elite standards.',
-      price: 'Starting from Â£45',
       image: 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&q=80&w=1600',
       tag: '24/7 UK Wide'
     },
@@ -32,7 +31,6 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
       subtitle: 'Rapid Response Network',
       description:
         'Immediate roadside assistance across all UK regions. Just one call and our elite technicians are on their way to your location.',
-      price: 'Emergency: Â£85',
       image: 'https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&q=80&w=1600',
       tag: 'Instant Support'
     },
@@ -41,7 +39,6 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
       subtitle: 'Elite Automotive Standards',
       description:
         'Experience the most reliable mobile car repair service in the UK. Certified, insured, and highly recommended by thousands of drivers.',
-      price: 'Plans from Â£120',
       image: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&q=80&w=1600',
       tag: 'Top Rated'
     }
@@ -75,6 +72,49 @@ export class HomePageComponent implements OnInit, AfterViewInit, OnDestroy {
       description: 'Round-the-clock roadside recovery and safe vehicle transport support across London and Reading.',
       image: 'assets/fleet_maintenance.png',
       tag: 'Always Available'
+    }
+  ];
+
+  readonly brandCards = [
+    {
+      name: 'Audi',
+      image: 'https://images.unsplash.com/photo-1771979788169-a77b299c7d84?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YXVkaSUyMGJyYW5kfGVufDB8fDB8fHww'
+    },
+    {
+      name: 'Mercedes',
+      image: 'https://images.unsplash.com/photo-1776966892405-84252c273e7e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fE1lcmNlZGVzJTIwYnJhbmR8ZW58MHx8MHx8fDA%3D'
+    },
+    {
+      name: 'Volkswagen',
+      image: 'https://images.unsplash.com/photo-1657296402147-0a9295f8abd9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Vm9sa3N3YWdlbiUyMCU1Q2JyYW5kfGVufDB8fDB8fHww'
+    },
+    {
+      name: 'Seat',
+      image: 'https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&q=80&w=900'
+    },
+    {
+      name: 'Vauxhall',
+      image: 'https://images.unsplash.com/photo-1703098916487-ab6668147d50?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fHw%3D'
+    },
+    {
+      name: 'Citroen',
+      image: 'https://images.unsplash.com/photo-1703035942278-ff6061781814?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHx8'
+    },
+    {
+      name: 'Ford',
+      image: 'https://images.unsplash.com/photo-1763596554036-b4503f3d53ad?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fGZvcmQlMjBicmFuZHxlbnwwfHwwfHx8MA%3D%3D'
+    },
+    {
+      name: 'Toyota',
+      image: 'https://images.unsplash.com/photo-1613859492095-85d9944f09f6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fFRveW90YSUyMGNhciUyMGJyYW5kfGVufDB8fDB8fHww'
+    },
+    {
+      name: 'Honda',
+      image: 'https://images.unsplash.com/photo-1578659258511-4a4e7dee7344?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8SG9uZGElMjBjYXIlMjBicmFuZHxlbnwwfHwwfHx8MA%3D%3D'
+    },
+    {
+      name: 'Nissan',
+      image: 'https://images.unsplash.com/photo-1712152775803-35a8f6937663?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bmlzc2FuJTIwY2FyJTIwYnJhbmR8ZW58MHx8MHx8fDA%3D'
     }
   ];
 

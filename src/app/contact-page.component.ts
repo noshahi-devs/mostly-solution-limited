@@ -35,7 +35,7 @@ export class ContactPageComponent {
     {
       label: 'Call Us',
       title: 'Immediate Response',
-      value: '+44 118 555 0194'
+      value: '+44 7366 994696'
     },
     {
       label: 'Email Us',
@@ -51,7 +51,7 @@ export class ContactPageComponent {
 
   readonly reasons: string[] = [
     'Mobile mechanic service at your location',
-    '24/7 emergency support with rapid dispatch',
+    '24/7 emergency support with rapid mechanic help',
     'Certified technicians and modern diagnostics',
     'Transparent pricing with no hidden costs',
     'Warranty-backed workmanship and support'
@@ -59,31 +59,31 @@ export class ContactPageComponent {
 
   readonly locations: LocationInfo[] = [
     {
-      country: 'United Kingdom',
+      country: 'Reading',
       city: 'Reading Office',
       address: '45 Friar Street, Reading RG1',
       phone: '+44 118 555 0194',
       phonePlain: '+441185550194',
-      hours: '24/7 Service Available'
+      hours: 'Mon-Sat 7AM-9PM'
     },
     {
-      country: 'United Kingdom',
+      country: 'London',
       city: 'London',
-      address: '42 Kingston Road, London, UK, SW19 1JH',
-      phone: '+44 7760 749992',
-      phonePlain: '+447760749992',
-      hours: 'Mon-Sat 8AM-8PM'
+      address: '42 Kingston Road, London, SW19 1JH',
+      phone: '+44 7366 994696',
+      phonePlain: '+447366994696',
+      hours: 'Mon-Sat 7AM-9PM'
     }
   ];
 
   readonly faqs: FaqItem[] = [
     {
       question: 'How fast can a mechanic reach my location?',
-      answer: 'For urgent requests, dispatch usually happens within 30 to 90 minutes depending on traffic and your exact area.'
+      answer: 'For urgent requests, we can send a mechanic within 30 to 90 minutes depending on traffic and your exact area.'
     },
     {
       question: 'Do you provide roadside emergency service?',
-      answer: 'Yes. We offer 24/7 roadside support for breakdowns, battery issues, no-start problems, and urgent mechanical faults.'
+      answer: 'Yes. We offer 24/7 roadside support, and we can send a mechanic for breakdowns, battery issues, no-start problems, and urgent mechanical faults.'
     },
     {
       question: 'Can I get a quote before confirming service?',
@@ -94,8 +94,8 @@ export class ContactPageComponent {
       answer: 'Our team handles most petrol, diesel, hybrid, and light commercial vehicles with professional diagnostic tools.'
     },
     {
-      question: 'Do you cover both US and UK locations?',
-      answer: 'Our current office coverage is focused on the United Kingdom, including Reading and London, with consistent service standards.'
+      question: 'Do you cover both Reading and London locations?',
+      answer: 'Our current office coverage is focused on Reading and London, with consistent service standards.'
     },
     {
       question: 'Is there any warranty on repairs?',

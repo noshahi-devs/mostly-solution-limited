@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, HostListener, OnDestroy, QueryList, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, HostListener, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
@@ -42,9 +42,6 @@ interface ServiceGroup {
   templateUrl: './about-page.component.html'
 })
 export class AboutPageComponent implements AfterViewInit, OnDestroy {
-  @ViewChildren('hoverVideo') private hoverVideos?: QueryList<ElementRef<HTMLVideoElement>>;
-
-  autoPlayingVideoIndexes = new Set<number>();
   autoPlayingProcessIndexes = new Set<number>();
   autoPlayingMissionIndexes = new Set<number>();
   autoPlayingWhyIndexes = new Set<number>();
@@ -54,8 +51,6 @@ export class AboutPageComponent implements AfterViewInit, OnDestroy {
 
   private revealObserver: IntersectionObserver | null = null;
   private statsObserver: IntersectionObserver | null = null;
-  private videoViewportObserver: IntersectionObserver | null = null;
-  private videoAutoPlayTimers = new Map<number, ReturnType<typeof setTimeout>>();
   private processViewportObserver: IntersectionObserver | null = null;
   private processAutoPlayTimers = new Map<number, ReturnType<typeof setTimeout>>();
   private missionViewportObserver: IntersectionObserver | null = null;
@@ -77,7 +72,7 @@ export class AboutPageComponent implements AfterViewInit, OnDestroy {
     },
     {
       title: 'Our Goal',
-      text: 'Keep every customer road-ready with rapid dispatch, certified technicians, and dependable long-term care.',
+      text: 'Keep every customer road-ready with rapid mechanic support, certified technicians, and dependable long-term care.',
       icon: 'M3 12l4-4 4 4m-4-4v12M21 12l-4-4-4 4m4-4v12'
     }
   ];
@@ -85,7 +80,7 @@ export class AboutPageComponent implements AfterViewInit, OnDestroy {
   readonly whyChooseUs: AboutCard[] = [
     {
       title: 'Fast Service',
-      text: 'Quick call handling and rapid dispatch across service zones.',
+      text: 'Quick call handling and rapid mechanic support across service zones.',
       icon: 'M13 2L3 14h7l-1 8 10-12h-7l1-8z'
     },
     {
@@ -234,7 +229,6 @@ export class AboutPageComponent implements AfterViewInit, OnDestroy {
     this.setupRevealObserver();
     this.observeRevealElements();
     this.setupStatsObserver();
-    this.setupVideoViewportAutoPlay();
     this.setupProcessViewportAutoPlay();
     this.setupMissionViewportAutoPlay();
     this.setupWhyViewportAutoPlay();
@@ -243,9 +237,6 @@ export class AboutPageComponent implements AfterViewInit, OnDestroy {
   ngOnDestroy(): void {
     this.revealObserver?.disconnect();
     this.statsObserver?.disconnect();
-    this.videoViewportObserver?.disconnect();
-    this.videoAutoPlayTimers.forEach((timer) => clearTimeout(timer));
-    this.videoAutoPlayTimers.clear();
     this.processViewportObserver?.disconnect();
     this.processAutoPlayTimers.forEach((timer) => clearTimeout(timer));
     this.processAutoPlayTimers.clear();
@@ -270,27 +261,6 @@ export class AboutPageComponent implements AfterViewInit, OnDestroy {
 
   closeLightbox(): void {
     this.lightboxOpen = false;
-  }
-
-  playHoverVideo(video: HTMLVideoElement): void {
-    if (!video) {
-      return;
-    }
-
-    video.muted = true;
-    const playPromise = video.play();
-    if (playPromise && typeof playPromise.catch === 'function') {
-      playPromise.catch(() => {});
-    }
-  }
-
-  pauseHoverVideo(video: HTMLVideoElement): void {
-    if (!video) {
-      return;
-    }
-
-    video.pause();
-    video.currentTime = 0;
   }
 
   private setupRevealObserver(): void {
@@ -364,76 +334,6 @@ export class AboutPageComponent implements AfterViewInit, OnDestroy {
         }
       }, stepTime);
     });
-  }
-
-  private setupVideoViewportAutoPlay(): void {
-    if (typeof IntersectionObserver === 'undefined') {
-      return;
-    }
-
-    this.videoViewportObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const indexText = (entry.target as HTMLElement).dataset['videoIndex'];
-          const index = Number(indexText);
-          if (Number.isNaN(index) || !this.isMobileViewport()) {
-            return;
-          }
-
-          if (entry.isIntersecting) {
-            if (this.videoAutoPlayTimers.has(index) || this.autoPlayingVideoIndexes.has(index)) {
-              return;
-            }
-
-            const timer = setTimeout(() => {
-              this.videoAutoPlayTimers.delete(index);
-              this.startViewportVideo(index);
-            }, 3000);
-            this.videoAutoPlayTimers.set(index, timer);
-            return;
-          }
-
-          const timer = this.videoAutoPlayTimers.get(index);
-          if (timer) {
-            clearTimeout(timer);
-            this.videoAutoPlayTimers.delete(index);
-          }
-          this.stopViewportVideo(index);
-        });
-      },
-      { threshold: 0.55 }
-    );
-
-    document.querySelectorAll('.video-hover-card').forEach((el) => this.videoViewportObserver?.observe(el));
-  }
-
-  private startViewportVideo(index: number): void {
-    const video = this.hoverVideos?.toArray()[index]?.nativeElement;
-    if (!video) {
-      return;
-    }
-
-    video.muted = true;
-    const playPromise = video.play();
-    if (playPromise && typeof playPromise.catch === 'function') {
-      playPromise.catch(() => {});
-    }
-    this.autoPlayingVideoIndexes.add(index);
-  }
-
-  private stopViewportVideo(index: number): void {
-    if (!this.autoPlayingVideoIndexes.has(index)) {
-      return;
-    }
-
-    const video = this.hoverVideos?.toArray()[index]?.nativeElement;
-    if (!video) {
-      return;
-    }
-
-    video.pause();
-    video.currentTime = 0;
-    this.autoPlayingVideoIndexes.delete(index);
   }
 
   private isMobileViewport(): boolean {

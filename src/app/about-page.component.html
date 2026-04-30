@@ -37,8 +37,8 @@
           Eye-catching results with professional auto care. Every quote is tailored to your vehicle condition and level of damage after inspection.
         </p>
         <div class="mt-6 flex flex-wrap gap-3">
-          <span class="inline-flex items-center rounded-full border border-white/35 bg-white/10 px-4 py-2 text-[11px] font-black uppercase tracking-[0.12em] text-white">London, UK Office</span>
-          <span class="inline-flex items-center rounded-full border border-white/35 bg-white/10 px-4 py-2 text-[11px] font-black uppercase tracking-[0.12em] text-white">Reading, UK Office</span>
+          <span class="inline-flex items-center rounded-full border border-white/35 bg-white/10 px-4 py-2 text-[11px] font-black uppercase tracking-[0.12em] text-white">London Office</span>
+          <span class="inline-flex items-center rounded-full border border-white/35 bg-white/10 px-4 py-2 text-[11px] font-black uppercase tracking-[0.12em] text-white">Reading Office</span>
           <span class="inline-flex items-center rounded-full border border-accent/70 bg-accent/20 px-4 py-2 text-[11px] font-black uppercase tracking-[0.12em] text-accent">Recovery Service Available 24/7</span>
         </div>
         <div class="mt-8 grid grid-cols-2 gap-3 w-full sm:flex sm:w-auto sm:flex-wrap">
@@ -218,14 +218,9 @@
           *ngFor="let item of videoCards; let i = index"
           class="reveal video-hover-card"
           [attr.data-video-index]="i"
-          [class.video-in-view-play]="autoPlayingVideoIndexes.has(i)"
-          (mouseenter)="playHoverVideo(hoverVideo)"
-          (mouseleave)="pauseHoverVideo(hoverVideo)"
         >
           <div class="video-stage">
             <img [src]="item.thumbnail" [alt]="item.title" loading="lazy" class="video-thumb">
-            <video #hoverVideo [src]="item.video" muted loop playsinline preload="metadata" class="video-overlay"></video>
-            <div class="video-dim"></div>
           </div>
           <div class="p-5">
             <h3 class="text-lg font-black uppercase text-primary-dark">{{ item.title }}</h3>
@@ -259,7 +254,7 @@
       <div class="reveal final-cta">
         <h2 class="text-3xl lg:text-5xl font-black uppercase text-primary-dark text-center">Need A Mechanic? We Are Just One Call Away</h2>
         <span class="mx-auto mt-3 block h-[3px] w-64 rounded-full bg-primary"></span>
-        <p class="mt-4 text-center text-primary-dark/70 font-semibold">Offices in London and Reading, UK. Recovery service available 24/7.</p>
+        <p class="mt-4 text-center text-primary-dark/70 font-semibold">Offices in London and Reading. Recovery service available 24/7.</p>
         <p class="mt-2 text-center text-primary-dark/60 text-sm font-medium">No fixed prices. Quotes are confirmed after inspection.</p>
         <div class="mt-8 flex flex-wrap justify-center gap-4">
           <a href="tel:+447366994696" class="inline-flex items-center justify-center rounded-xl bg-primary text-white px-8 py-3.5 font-black uppercase tracking-[0.12em] text-xs hover:bg-primary-dark transition-colors">
